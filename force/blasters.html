@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luau Module Documentation</title>
+    <title>Blasters | Documentation</title>
+    <link rel="icon" href="/assets/logo" type="image/x-icon">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -75,6 +76,9 @@
         .number { color: #ffab91; }
         .function { color: #82aaff; }
         .comment { color: #7c7c7c; font-style: italic; }
+        .boolean { color: #ff8b50; }
+        .nil { color: #d16d92; }
+        .metamethod { color: #c678dd; }
     </style>
     <script>
         function copyCode(button) {
@@ -89,9 +93,12 @@
             document.querySelectorAll('pre code').forEach((block) => {
                 block.innerHTML = block.innerHTML
                     .replace(/\b(function|local|end|if|then|else|for|while|return|do|not|and|or|repeat|until)\b/g, '<span class="keyword">$1</span>')
+                    .replace(/\b(true|false)\b/g, '<span class="boolean">$1</span>')
+                    .replace(/\b(nil)\b/g, '<span class="nil">$1</span>')
                     .replace(/(".*?"|\'.*?\')/g, '<span class="string">$1</span>')
                     .replace(/\b(\d+)\b/g, '<span class="number">$1</span>')
                     .replace(/(--.*?$)/gm, '<span class="comment">$1</span>')
+                    .replace(/\b(setmetatable|getmetatable|pairs|ipairs|next|assert|pcall|xpcall|type|tonumber|tostring|print|warn|error|coroutine\.\w+|math\.\w+|table\.\w+|string\.\w+|debug\.\w+|os\.\w+)\b/g, '<span class="metamethod">$1</span>')
                     .replace(/\b([a-zA-Z_][a-zA-Z0-9_]*)\(/g, '<span class="function">$1</span>(');
             });
         }
@@ -101,7 +108,7 @@
 </head>
 <body>
     <header>
-        <h1>Luau Module Documentation</h1>
+        <h1>Blasters</h1>
     </header>
     <main>
         <section id="blaster-client">

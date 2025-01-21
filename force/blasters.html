@@ -7,13 +7,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: #000000;
+            color: #d0d7de;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #1e1e1e;
+            background-color: #003366;
             padding: 20px;
             text-align: center;
         }
@@ -30,33 +30,61 @@
             margin-bottom: 40px;
         }
         h2 {
-            color: #bb86fc;
+            color: #4fc3f7;
         }
         h3 {
-            color: #03dac6;
+            color: #81d4fa;
         }
         pre {
-            background-color: #1e1e1e;
+            background-color: #001f3f;
             padding: 15px;
             border-radius: 5px;
             overflow-x: auto;
             font-size: 14px;
+            position: relative;
         }
-        code {
-            color: #ffcb6b;
+        pre code {
+            color: #ffffff;
+            font-family: Consolas, "Courier New", monospace;
         }
+        .keyword { color: #c792ea; }
+        .string { color: #ecc48d; }
+        .number { color: #f78c6c; }
+        .function { color: #82aaff; }
+        .comment { color: #546e7a; font-style: italic; }
         .example {
-            background-color: #292929;
-            padding: 15px;
-            border-left: 4px solid #bb86fc;
             margin-bottom: 15px;
         }
         .example-title {
-            color: #bb86fc;
+            color: #4fc3f7;
             font-weight: bold;
             margin-bottom: 5px;
         }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007acc;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .copy-button:hover {
+            background-color: #005a99;
+        }
     </style>
+    <script>
+        function copyCode(button) {
+            const code = button.parentElement.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => { button.innerText = 'Copy'; }, 1500);
+            });
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -77,9 +105,9 @@
             <h3>Example Usage</h3>
             <div class="example">
                 <div class="example-title">Shooting a blaster</div>
-                <pre><code>local blaster = BlasterClient.new()
-blaster:SetDamage(50)
-blaster:Shoot(Vector3.new(10, 0, 10))</code></pre>
+                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code><span class="keyword">local</span> blaster = <span class="function">BlasterClient.new</span>()
+blaster:<span class="function">SetDamage</span>(<span class="number">50</span>)
+blaster:<span class="function">Shoot</span>(<span class="function">Vector3.new</span>(<span class="number">10</span>, <span class="number">0</span>, <span class="number">10</span>))</code></pre>
             </div>
         </section>
 
@@ -96,9 +124,9 @@ blaster:Shoot(Vector3.new(10, 0, 10))</code></pre>
             <h3>Example Usage</h3>
             <div class="example">
                 <div class="example-title">Creating and configuring a bullet</div>
-                <pre><code>local bullet = Bullet.new()
-bullet:SetSpeed(100)
-bullet:Destroy()</code></pre>
+                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code><span class="keyword">local</span> bullet = <span class="function">Bullet.new</span>()
+bullet:<span class="function">SetSpeed</span>(<span class="number">100</span>)
+bullet:<span class="function">Destroy</span>()</code></pre>
             </div>
         </section>
 
@@ -115,9 +143,9 @@ bullet:Destroy()</code></pre>
             <h3>Example Usage</h3>
             <div class="example">
                 <div class="example-title">Applying recoil</div>
-                <pre><code>local recoil = Recoil.new()
-recoil:Apply(5)
-recoil:Reset()</code></pre>
+                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code><span class="keyword">local</span> recoil = <span class="function">Recoil.new</span>()
+recoil:<span class="function">Apply</span>(<span class="number">5</span>)
+recoil:<span class="function">Reset</span>()</code></pre>
             </div>
         </section>
 
@@ -134,10 +162,10 @@ recoil:Reset()</code></pre>
             <h3>Example Usage</h3>
             <div class="example">
                 <div class="example-title">Using exhaust effects</div>
-                <pre><code>local exhaust = Exhaust.new()
-exhaust:Emit(20)
-wait(2)
-exhaust:Stop()</code></pre>
+                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code><span class="keyword">local</span> exhaust = <span class="function">Exhaust.new</span>()
+exhaust:<span class="function">Emit</span>(<span class="number">20</span>)
+<span class="function">wait</span>(<span class="number">2</span>)
+exhaust:<span class="function">Stop</span>()</code></pre>
             </div>
         </section>
     </main>

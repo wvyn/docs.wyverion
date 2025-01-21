@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Blasters | Documentation - Wyverion Development">
@@ -19,21 +19,25 @@
             margin: 0;
             padding: 0;
         }
+
         header {
             background-color: #212121;
             padding: 20px;
             text-align: center;
             border-bottom: 1px solid #333;
         }
+
         header h1 {
             margin: 0;
-            color: #66b3ff;
+            color: rgb(255, 255, 255);
         }
+
         main {
             padding: 20px;
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
         }
+
         section {
             margin-bottom: 40px;
             padding: 20px;
@@ -41,12 +45,66 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
         }
-        h2 {
-            color: rgb(255, 255, 255);
+
+        main h1 {
+            font-size: 2rem;
         }
+
+        h2,
         h3 {
-            color: rgb(255, 255, 255);
+            color: #fff;
         }
+
+        h3 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+
+        .method-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .method-item {
+            margin-bottom: 20px;
+        }
+
+        .method-item h4 {
+            color: #66b3ff;
+            margin: 5px 0;
+        }
+
+        .method-item p {
+            color: #ccc;
+            margin: 5px 0;
+        }
+
+        .parameter-table,
+        .returns-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        .parameter-table td,
+        .returns-table td {
+            border-bottom: 1px solid #444;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .parameter-table td:first-child,
+        .returns-table td:first-child {
+            border-right: 1px solid #444;
+        }
+
+        .parameter-table td a,
+        .returns-table td a {
+            color: #66b3ff;
+            text-decoration: none;
+        }
+
         pre {
             background-color: #333;
             padding: 15px;
@@ -57,91 +115,414 @@
             color: #f1f1f1;
             font-family: Consolas, 'Courier New', monospace;
         }
+
         pre code {
-            color: rgb(204, 204, 204);
+            color: #ccc;
         }
-        ._keyword { color: rgb(248, 109, 124); }
-        ._string { color: rgb(173, 241, 149); }
-        ._number { color: rgb(255, 198, 0); }
-        ._function { color: rgb(248, 109, 124); }
-        ._comment { color: rgb(102, 102, 102); font-style: italic; }
-        ._localproperty { color: rgb(0, 139, 219); }
-	._localmethod { color: rgb(253, 251, 172); }
-	._builtinfunction { color: rgb(132, 214, 247); }
-        .example-title {
-            color: rgb(255, 255, 255);
-            font-weight: bold;
-            margin-bottom: 5px;
+
+        ._keyword {
+            color: rgb(248, 109, 124);
         }
-        .copy-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #66b3ff;
-            border: none;
-            color: #1a1a1a;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 12px;
-            transition: background-color 0.3s ease;
+
+        ._string {
+            color: rgb(173, 241, 149);
         }
-        .copy-button:hover {
-            background-color: #4fa3d1;
+
+        ._number {
+            color: rgb(255, 198, 0);
+        }
+
+        ._function {
+            color: rgb(248, 109, 124);
+        }
+
+        ._comment {
+            color: rgb(102, 102, 102);
+            font-style: italic;
+        }
+
+        ._localproperty {
+            color: rgb(0, 139, 219);
+        }
+
+        ._localmethod {
+            color: rgb(253, 251, 172);
+        }
+
+        ._builtinfunction {
+            color: rgb(132, 214, 247);
         }
     </style>
-    <script>
-        function copyCode(button) {
-            const code = button.parentElement.querySelector('code').innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                button.innerText = 'Copied!';
-                setTimeout(() => { button.innerText = 'Copy'; }, 1500);
-            });
-        }
-    </script>
 </head>
+
 <body>
     <header>
-        <h1>Blasters</h1>
+        <h1>Blasters Documentation</h1>
     </header>
     <main>
-        <section id="blaster-client">
-            <h2>Class: BlasterClient</h2>
-            <p>The <code>BlasterClient</code> class is responsible for managing blaster weapons and their interactions in the game.</p>
-
-            <h3>Headers</h3>
-            <ul>
-                <li><code>BlasterClient:Shoot(targetPosition: Vector3)</code>: Fires a blaster shot at the specified target position.</li>
-            </ul>
-
-            <div class="example">
-                <div class="example-title">Another Header</div>
-                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code></code>
-</pre>
-            </div>
+        <section id="blaster-introduction">
+            <h2>Introduction</h2>
+            <p>Welcome to the documentation for the <code>BlasterModule</code> used in the game <strong>FORCE</strong>
+                on Roblox. This system allows players to equip, use, and manage blasters within the game, enabling
+                complex interactions like shooting, reloading, and more.</p>
+            <p>To use this module, you must first require it in your code:</p>
+            <pre><code>local BlasterModule = require("BlasterModule")</code></pre>
+            <p>The module provides functionality to integrate blaster tools with player characters, and allows fine
+                control over the behavior of each blaster.</p>
         </section>
+
+        <section id="blasterClient">
+            <h1><code>Class BlasterClient</code></h1>
+            <h2>Properties</h2>
+            <p>The <code>BlasterClient</code> class contains various properties that define the blaster's associations
+                and behavior for the player. Below are the key properties:</p>
+<br></br>
+            <h3>Player: <a href="https://create.roblox.com/docs/reference/engine/classes/Player"
+                    class="_localproperty">Player</a></h3>
+            <p>The player who owns the blaster. This links the tool to the player's game instance, allowing the blaster
+                to react to player actions such as equipping or firing.</p>
+<br></br>
+            <h3>Character: <a href="https://create.roblox.com/docs/reference/engine/classes/Model"
+                    class="_localproperty">Model</a></h3>
+            <p>Represents the player's character model. The blaster is linked to this character, allowing the tool to
+                interact with and affect the player directly.</p>
+<br></br>
+            <h3>Tool: <a href="https://create.roblox.com/docs/reference/engine/classes/Tool"
+                    class="_localproperty">Tool</a></h3>
+            <p>The specific tool associated with the blaster. This property is essential for managing the functionality
+                of the blaster in the game, including firing, reloading, and equipping the tool.</p>
+<br></br>
+            <h3>BlasterRemote: <a href="https://create.roblox.com/docs/reference/engine/classes/RemoteFunction"
+                    class="_localproperty">RemoteFunction</a></h3>
+            <p>Handles communication between the server and client. This allows remote function calls to trigger actions
+                related to the blaster.</p>
+<br></br>
+            <h3>Recoil: <a href="https://docs.wyverion.com" class="_localproperty">RecoilConstructor</a></h3>
+            <p>Handles the recoil effects when the blaster is fired, adjusting the player's camera or movement
+                accordingly.</p>
+<br></br>
+            <h3>BlasterStats: <a href="https://docs.wyverion.com" class="_localproperty">BlasterStats</a></h3>
+            <p>Represents the stats associated with the blaster, such as maximum ammo, exhaust, and cooldown behavior.
+            </p>
+<br></br>
+            <h3>BlasterIndex: <a href="https://docs.wyverion.com" class="_localproperty">Number</a></h3>
+            <p>A unique index for the blaster instance. This is used to identify the blaster in the game.</p>
+<br></br>
+            <h3>Signals:</h3>
+            <p>Signals are event-driven responses used to trigger actions based on specific events related to the
+                blaster's state. Below are the key signals associated with the blaster:</p>
+            <table class="parameter-table">
+                <tbody>
+                    <tr>
+                        <td>OnEquipped</td>
+                        <td>Triggered when the blaster tool is equipped to the player's character.</td>
+                    </tr>
+                    <tr>
+                        <td>OnUnequipped</td>
+                        <td>Triggered when the blaster tool is unequipped from the player's character.</td>
+                    </tr>
+                    <tr>
+                        <td>OnExhausting</td>
+                        <td>Triggered at the start of the blaster's depletion, allowing for animations or cooldown
+                            effects to occur.</td>
+                    </tr>
+                    <tr>
+                        <td>OnExhausted</td>
+                        <td>Triggered when the blaster's ammunition or power is depleted.</td>
+                    </tr>
+                    <tr>
+                        <td>OnReconcile</td>
+                        <td>Triggered after a server reconciliation, ensuring data consistency across the game.</td>
+                    </tr>
+                    <tr>
+                        <td>OnBulletReflected</td>
+                        <td>Triggered when a bullet fired from the blaster is reflected, offering a chance to handle
+                            specific game interactions.</td>
+                    </tr>
+                    <tr>
+                        <td>OnBulletFired</td>
+                        <td>Triggered after a bullet is fired from the blaster, enabling game logic related to bullet
+                            behavior.</td>
+                    </tr>
+                    <tr>
+                        <td>OnShot</td>
+                        <td>Triggered when a shot is fired from the blaster, allowing other game systems to react to the
+                            event.</td>
+                    </tr>
+                    <tr>
+                        <td>FirerateEnded</td>
+                        <td>Triggered when the cooldown period for the blaster's fire rate ends, allowing it to shoot
+                            again.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+<br></br>
+            <h2>Methods</h2>
+<br></br>
+            <div class="method-item">
+                <h3>BlasterClient.new</h3>
+                <p>Instantiates a new <code>BlasterClient</code> object, which is used to manage a blaster for a
+                    specific player and their character.</p>
+                <h2>Parameters</h2>
+                <table class="parameter-table">
+                    <tbody>
+                        <tr>
+                            <td>character: <a href="https://create.roblox.com/docs/reference/engine/classes/Model"
+                                    class="_localproperty">Model</a></td>
+                            <td>The character model to associate with the blaster.</td>
+                        </tr>
+                        <tr>
+                            <td>tool: <a href="https://create.roblox.com/docs/reference/engine/classes/Tool">Tool</a>
+                            </td>
+                            <td>The specific tool object representing the blaster.</td>
+                        </tr>
+                        <tr>
+                            <td>blasterStats: <a href="https://docs.wyverion.com">BlasterStats?</a></td>
+                            <td><b>(Optional)</b> Custom statistics to define specific attributes or behaviors for the
+                                blaster.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Returns</h2>
+                <table class="returns-table">
+                    <tbody>
+                        <tr>
+                            <td>blasterClient: <a href="https://docs.wyverion.com">BlasterClient</a></td>
+                            <td>Returns the new <code>BlasterClient</code> object that is now managing the blaster.</td>
+                        </tr>
+                    </tbody>
+                </table>
+<br></br>
+            </div>
+
+            <div class="method-item">
+                <h3><code>BlasterClient:Shoot(position)</code></h3>
+                <p>Handles the logic for shooting the blaster. It checks conditions like whether the blaster is
+                    equipped, whether it's exhausting, and manages burst firing.</p>
+                <h2>Parameters</h2>
+                <table class="parameter-table">
+                    <tbody>
+                        <tr>
+                            <td>position: <a href="https://create.roblox.com/docs/reference/engine/classes/Vector3"
+                                    class="_localproperty">Vector3 | function</a></td>
+                            <td>The position to shoot at, or a function that calculates the position dynamically based
+                                on the current player state.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Returns</h2>
+                <table class="returns-table">
+                    <tbody>
+                        <tr>
+                            <td>success: <a href="https://docs.wyverion.com">boolean</a></td>
+                            <td>Returns a boolean</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code>-- Trigger a shot at the given position or calculate a position
+-- if <code>position</code> is a function.
+local success = BlasterClient:Shoot(position)
+</code></pre>
+<br></br>
+            </div>
+
+            <div class="method-item">
+                <h3><code>BlasterClient:Exhaust(ping)</code></h3>
+                <p>Handles the blaster's exhaust state, which occurs after shooting. It starts an exhaust process and
+                    sends server requests if needed to synchronize the state.</p>
+                <h2>Parameters</h2>
+                <table class="parameter-table">
+                    <tbody>
+                        <tr>
+                            <td>ping: <a href="https://create.roblox.com/docs/reference/engine/classes/number"
+                                    class="_localproperty">Number</a></td>
+                            <td>The ping time for the server communication, affecting how quickly the exhaust process is
+                                synchronized.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Returns</h2>
+                <table class="returns-table">
+                    <tbody>
+                        <tr>
+                            <td>success: <a href="https://docs.wyverion.com">boolean</a></td>
+                            <td>Returns an boolean</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code>-- Activate exhaust effect and sound, reducing the exhaust level.
+local success = BlasterClient:Exhaust(ping)
+</code></pre>
+<br></br>
+
+            <div class="method-item">
+                <h3><code>BlasterClient:Destroy()</code></h3>
+                <p>Cleans up and removes all references to the blaster, disconnecting signals, and resetting the state
+                    of the object.</p>
+                <h2>Parameters</h2>
+                <table class="parameter-table">
+                    <tbody>
+                        <tr>
+                            <td>None</td>
+                            <td>This method does not take any parameters.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Returns</h2>
+                <table class="returns-table">
+                    <tbody>
+                        <tr>
+                            <td>None</td>
+                            <td>This method does not return any value.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code>-- Destroy the current blaster instance and clear all connections.
+BlasterClient:Destroy()
+</code></pre>
+<br></br>
+            </div>
+<h2>Private Functions</h2>
+<br></br>
+            </div>
+
+            <div class="method-item">
+                <h3><code>BlasterClient:_createBlasterConnections()</code></h3>
+                <p>Sets up connections for the blaster's events, including equip/unequip, shot firing, exhaust, and
+                    bullet-related events.</p>
+                <h2>Parameters</h2>
+                <table class="parameter-table">
+                    <tbody>
+                        <tr>
+                            <td>None</td>
+                            <td>This method does not take any parameters.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Returns</h2>
+                <table class="returns-table">
+                    <tbody>
+                        <tr>
+                            <td>None</td>
+                            <td>This method does not return any value.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code>-- Initialize blaster connections such as equip, shoot, and exhaust events.
+BlasterClient:_createBlasterConnections()
+</code></pre>
+<br></br>
+            </div>
+
+            <div class="method-item">
+                <h3><code>BlasterClient:_fireBullet(startPosition, direction, startTime, isReflection)</code></h3>
+                <p>Fires a bullet in a given direction from a start position. It handles the bullet's flight path,
+                    collision detection, and reflection logic if <code>isReflection</code> is true.</p>
+                <h2>Parameters</h2>
+                <table class="parameter-table">
+                    <tbody>
+                        <tr>
+                            <td>startPosition: <a href="https://create.roblox.com/docs/reference/engine/classes/Vector3"
+                                    class="_localproperty">Vector3</a></td>
+                            <td>The starting position of the bullet in the game world.</td>
+                        </tr>
+                        <tr>
+                            <td>direction: <a href="https://create.roblox.com/docs/reference/engine/classes/Vector3"
+                                    class="_localproperty">Vector3</a></td>
+                            <td>The direction the bullet should travel after being fired.</td>
+                        </tr>
+                        <tr>
+                            <td>startTime: <a href="https://create.roblox.com/docs/reference/engine/classes/number"
+                                    class="_localproperty">Number</a></td>
+                            <td>The time the bullet was fired, used for time-based calculations or effects.</td>
+                        </tr>
+                        <tr>
+                            <td>isReflection: <a href="https://create.roblox.com/docs/reference/engine/classes/boolean"
+                                    class="_localproperty">Boolean</a></td>
+                            <td>A flag indicating whether the bullet should be reflected (true) or not (false).</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Returns</h2>
+                <table class="returns-table">
+                    <tbody>
+                        <tr>
+                            <td>bullet: <a href="https://docs.wyverion.com">Bullet</a></td>
+                            <td>Returns a <code>Bullet</code> object representing the fired bullet, which can be further
+                                manipulated or tracked.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code>-- This method sends bullet fire info and handles the bullet's
+-- collision detection, including reflections and hit effects.
+local bullet = BlasterClient:_fireBullet(startPosition, direction, startTime, isReflection)
+</code></pre>
+<br></br>
+            </div>
+
+ <div class="method-item">
+                <h3><code>BlasterClient:_shotEnded()</code></h3>
+                <p>Ends the shot, clearing any ongoing shot information and firing the <code>FirerateEnded</code>
+                    signal.</p>
+                <h2>Parameters</h2>
+                <table class="parameter-table">
+                    <tbody>
+                        <tr>
+                            <td>None</td>
+                            <td>This method does not take any parameters.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Returns</h2>
+                <table class="returns-table">
+                    <tbody>
+                        <tr>
+                            <td>None</td>
+                            <td>This method does not return any value.</td>
+                        </tr>
+                    </tbody>
+                </table>
+<br></br>
+            </div>
+
+            
+        </section>
+
+<section id="blaster-introduction">
+            <h2>Code Examples</h2>
+            <pre><code>local BlasterClientConstructor = require("BlasterClient") 
+local BlasterClient = BlasterClientConstructor.new(character, tool, blasterStats)</code></pre>
+        </section>
+
     </main>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const keywords = [ 'and', 'break', 'do', 'else', 'elseif', 'end', 'false', 'for', 'function', 'if', 'in', 'local', 'nil', 'not', 'or', 'repeat', 'return', 'then', 'true', 'until', 'while' ];
-    const functions = [ 'assert', 'collectgarbage', 'error', 'getmetatable', 'ipairs', 'next', 'pairs', 'pcall', 'print', 'rawequal', 'rawget', 'rawlen', 'rawset', 'require', 'select', 'setmetatable', 'tonumber', 'tostring', 'type', 'xpcall', 'utf8', 'coroutine', 'package', 'string', 'table', 'math', 'debug', 'os', 'warn', 'wait', 'delay', 'spawn', 'tick', 'time', 'elapsedTime', 'print', 'warn', 'typeof', 'type', 'Version', 'Instance', 'Vector3', 'CFrame', 'UDim2', 'Color3', 'Enum', 'workspace', 'game', 'script', 'players' ];
 
-    function syntaxHighlight(code) {
-        return code
-.replace(/"[^"]*"/g, '<span class="_string">$&</span>') // strings
-            .replace(/--.*$/gm, '<span class="_comment">$&</span>') // comments
-            .replace(/\b(\d+)\b/g, '<span class="_number">$1</span>') // numbers
-            .replace(new RegExp(`\\b(${keywords.join('|')})\\b`, 'g'), '<span class="_keyword">$1</span>') // keywords
-            .replace(new RegExp(`\\b(${functions.join('|')})\\b`, 'g'), '<span class="_builtinfunction">$1</span>') // functions
-            .replace(/(\w+)\.(\w+)/g, '<span class="localproperty">$1</span>.<span class="_localproperty">$2</span>') // local properties
-            .replace(/(\w+):(\w+)/g, '<span class="localproperty">$1</span>:<span class="_localmethod">$2</span>'); // local methods
-    }
 
-    document.querySelectorAll('pre code').forEach((block) => {
-        block.innerHTML = syntaxHighlight(block.innerText);
-    });
-});
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const keywords = ['self', 'and', 'break', 'do', 'else', 'elseif', 'end', 'false', 'for', 'function', 'if', 'in', 'local', 'nil', 'not', 'or', 'repeat', 'return', 'then', 'true', 'until', 'while'];
+            const functions = ['assert', 'collectgarbage', 'error', 'getmetatable', 'ipairs', 'next', 'pairs', 'pcall', 'print', 'rawequal', 'rawget', 'rawlen', 'rawset', 'require', 'select', 'setmetatable', 'tonumber', 'tostring', 'type', 'xpcall', 'utf8', 'coroutine', 'package', 'string', 'table', 'math', 'debug', 'os', 'warn', 'wait', 'delay', 'spawn', 'tick', 'time', 'elapsedTime', 'print', 'warn', 'typeof', 'type', 'Version', 'Instance', 'Vector3', 'CFrame', 'UDim2', 'Color3', 'Enum', 'workspace', 'game', 'script', 'players'];
 
-</script>
+            function syntaxHighlight(code) {
+                return code
+                    .replace(/"[^"]*"/g, '<span class="_string">$&</span>') // strings
+                    .replace(/--.*$/gm, '<span class="_comment">$&</span>') // comments
+                    .replace(/\b(\d+)\b/g, '<span class="_number">$1</span>') // numbers
+                    .replace(new RegExp(`\\b(${keywords.join('|')})\\b`, 'g'), '<span class="_keyword">$1</span>') // keywords
+                    .replace(new RegExp(`\\b(${functions.join('|')})\\b`, 'g'), '<span class="_builtinfunction">$1</span>') // functions
+                    .replace(/(\w+)\.(\w+)\s*(\()/g, '<span class="localproperty">$1</span>.<span class="_localmethod">$2</span>$3') // local methods with parentheses
+                    .replace(/(\w+)\.(\w+)/g, '<span class="localproperty">$1</span>.<span class="_localproperty">$2</span>') // local properties
+                    .replace(/(\w+\.\w+\.\w+)/g, (match) => {
+                        return match.replace(/\./g, '.<span class="_localproperty">').concat('</span>');
+                    }) // handle nested properties
+                    .replace(/(\w+):(\w+)/g, '<span class="localproperty">$1</span>:<span class="_localmethod">$2</span>'); // local methods
+            }
+
+            document.querySelectorAll('pre code').forEach((block) => {
+                block.innerHTML = syntaxHighlight(block.innerText);
+            });
+        });
+    </script>
 </body>
+
 </html>

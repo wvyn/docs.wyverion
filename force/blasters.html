@@ -205,7 +205,7 @@
             <p>Represents the stats associated with the blaster, such as maximum ammo, exhaust, and cooldown behavior.
             </p>
 <br></br>
-            <h3>BlasterIndex: <a href="https://docs.wyverion.com" class="_localproperty">Number</a></h3>
+            <h3>BlasterIndex: <a href="https://create.roblox.com/docs/luau/numbers" class="_localproperty">number</a></h3>
             <p>A unique index for the blaster instance. This is used to identify the blaster in the game.</p>
 <br></br>
             <h3>Signals:</h3>
@@ -304,7 +304,7 @@
                 <table class="parameter-table">
                     <tbody>
                         <tr>
-                            <td>position: <a href="https://create.roblox.com/docs/reference/engine/classes/Vector3"
+                            <td>position: <a href="https://create.roblox.com/docs/reference/engine/datatypes/Vector3"
                                     class="_localproperty">Vector3 | function</a></td>
                             <td>The position to shoot at, or a function that calculates the position dynamically based
                                 on the current player state.</td>
@@ -315,7 +315,7 @@
                 <table class="returns-table">
                     <tbody>
                         <tr>
-                            <td>success: <a href="https://docs.wyverion.com">boolean</a></td>
+                            <td>success: <a href="https://create.roblox.com/docs/luau/booleans">boolean</a></td>
                             <td>Returns a boolean</td>
                         </tr>
                     </tbody>
@@ -335,8 +335,8 @@ local success = BlasterClient:Shoot(position)
                 <table class="parameter-table">
                     <tbody>
                         <tr>
-                            <td>ping: <a href="https://create.roblox.com/docs/reference/engine/classes/number"
-                                    class="_localproperty">Number</a></td>
+                            <td>ping: <a href="https://create.roblox.com/docs/luau/numbers"
+                                    class="_localproperty">number</a></td>
                             <td>The ping time for the server communication, affecting how quickly the exhaust process is
                                 synchronized.</td>
                         </tr>
@@ -346,7 +346,7 @@ local success = BlasterClient:Shoot(position)
                 <table class="returns-table">
                     <tbody>
                         <tr>
-                            <td>success: <a href="https://docs.wyverion.com">boolean</a></td>
+                            <td>success: <a href="https://create.roblox.com/docs/luau/booleans">boolean</a></td>
                             <td>Returns an boolean</td>
                         </tr>
                     </tbody>
@@ -423,23 +423,23 @@ BlasterClient:_createBlasterConnections()
                 <table class="parameter-table">
                     <tbody>
                         <tr>
-                            <td>startPosition: <a href="https://create.roblox.com/docs/reference/engine/classes/Vector3"
+                            <td>startPosition: <a href="https://create.roblox.com/docs/reference/engine/datatypes/Vector3"
                                     class="_localproperty">Vector3</a></td>
                             <td>The starting position of the bullet in the game world.</td>
                         </tr>
                         <tr>
-                            <td>direction: <a href="https://create.roblox.com/docs/reference/engine/classes/Vector3"
+                            <td>direction: <a href="https://create.roblox.com/docs/reference/engine/datatypes/Vector3"
                                     class="_localproperty">Vector3</a></td>
                             <td>The direction the bullet should travel after being fired.</td>
                         </tr>
                         <tr>
-                            <td>startTime: <a href="https://create.roblox.com/docs/reference/engine/classes/number"
-                                    class="_localproperty">Number</a></td>
+                            <td>startTime: <a href="https://create.roblox.com/docs/luau/numbers"
+                                    class="_localproperty">number</a></td>
                             <td>The time the bullet was fired, used for time-based calculations or effects.</td>
                         </tr>
                         <tr>
-                            <td>isReflection: <a href="https://create.roblox.com/docs/reference/engine/classes/boolean"
-                                    class="_localproperty">Boolean</a></td>
+                            <td>isReflection: <a href="https://create.roblox.com/docs/luau/booleans"
+                                    class="_localproperty">boolean</a></td>
                             <td>A flag indicating whether the bullet should be reflected (true) or not (false).</td>
                         </tr>
                     </tbody>

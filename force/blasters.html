@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luau Module Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #ffffff;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #bb86fc;
+        }
+        h3 {
+            color: #03dac6;
+        }
+        pre {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        code {
+            color: #ffcb6b;
+        }
+        .example {
+            background-color: #292929;
+            padding: 15px;
+            border-left: 4px solid #bb86fc;
+            margin-bottom: 15px;
+        }
+        .example-title {
+            color: #bb86fc;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Luau Module Documentation</h1>
+    </header>
+    <main>
+        <section id="blaster-client">
+            <h2>Class: BlasterClient</h2>
+            <p>The <code>BlasterClient</code> class is responsible for managing blaster weapons and their interactions in the game.</p>
+
+            <h3>Functions</h3>
+            <ul>
+                <li><code>BlasterClient:Shoot(targetPosition: Vector3)</code>: Fires a blaster shot at the specified target position.</li>
+                <li><code>BlasterClient:Reload()</code>: Reloads the blaster.</li>
+                <li><code>BlasterClient:SetDamage(damage: number)</code>: Sets the damage dealt by the blaster.</li>
+            </ul>
+
+            <h3>Example Usage</h3>
+            <div class="example">
+                <div class="example-title">Shooting a blaster</div>
+                <pre><code>local blaster = BlasterClient.new()
+blaster:SetDamage(50)
+blaster:Shoot(Vector3.new(10, 0, 10))</code></pre>
+            </div>
+        </section>
+
+        <section id="bullet">
+            <h2>Class: Bullet</h2>
+            <p>The <code>Bullet</code> class represents a single bullet fired by a weapon.</p>
+
+            <h3>Functions</h3>
+            <ul>
+                <li><code>Bullet:SetSpeed(speed: number)</code>: Sets the speed of the bullet.</li>
+                <li><code>Bullet:Destroy()</code>: Destroys the bullet instance.</li>
+            </ul>
+
+            <h3>Example Usage</h3>
+            <div class="example">
+                <div class="example-title">Creating and configuring a bullet</div>
+                <pre><code>local bullet = Bullet.new()
+bullet:SetSpeed(100)
+bullet:Destroy()</code></pre>
+            </div>
+        </section>
+
+        <section id="recoil">
+            <h2>Class: Recoil</h2>
+            <p>The <code>Recoil</code> class handles weapon recoil mechanics, adding realism to weapon firing.</p>
+
+            <h3>Functions</h3>
+            <ul>
+                <li><code>Recoil:Apply(intensity: number)</code>: Applies recoil with the specified intensity.</li>
+                <li><code>Recoil:Reset()</code>: Resets the recoil to its default state.</li>
+            </ul>
+
+            <h3>Example Usage</h3>
+            <div class="example">
+                <div class="example-title">Applying recoil</div>
+                <pre><code>local recoil = Recoil.new()
+recoil:Apply(5)
+recoil:Reset()</code></pre>
+            </div>
+        </section>
+
+        <section id="exhaust">
+            <h2>Class: Exhaust</h2>
+            <p>The <code>Exhaust</code> class creates visual and functional effects for weapon exhaust.</p>
+
+            <h3>Functions</h3>
+            <ul>
+                <li><code>Exhaust:Emit(particles: number)</code>: Emits the specified number of exhaust particles.</li>
+                <li><code>Exhaust:Stop()</code>: Stops all exhaust emissions.</li>
+            </ul>
+
+            <h3>Example Usage</h3>
+            <div class="example">
+                <div class="example-title">Using exhaust effects</div>
+                <pre><code>local exhaust = Exhaust.new()
+exhaust:Emit(20)
+wait(2)
+exhaust:Stop()</code></pre>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

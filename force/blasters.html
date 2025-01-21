@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Blasters | Documentation">
-    <meta property="og:description" content="Comprehensive guide for Blasters in the game FORCE. Learn how to use the BlasterClient, Bullet, Recoil, and Exhaust classes." />
-    <meta property="og:image" content="/assets/icon.png">
+    <meta property="og:title" content="Blasters | Documentation - Wyverion Development">
+    <meta property="og:description" content="Documentation for Blasters in the game FORCE." />
     <meta property="og:url" content="docs.wyverion.com/force/blasters">
     <meta property="og:site_name" content="Blasters Documentation">
-
     <title>Blasters | Documentation</title>
     <link rel="icon" href="/assets/icon.ico" type="image/x-icon">
     <style>
@@ -23,28 +20,25 @@
             margin: 0;
             padding: 0;
         }
+
         header {
             background-color: #212121;
             padding: 20px;
             text-align: center;
             border-bottom: 1px solid #333;
         }
-        header img {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 40px;
-            height: auto;
-        }
+
         header h1 {
             margin: 0;
             color: #66b3ff;
         }
+
         main {
             padding: 20px;
             max-width: 800px;
             margin: auto;
         }
+
         section {
             margin-bottom: 40px;
             padding: 20px;
@@ -52,12 +46,15 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
         }
+
         h2 {
             color: #66b3ff;
         }
+
         h3 {
             color: #a3d5ff;
         }
+
         pre {
             background-color: #333;
             padding: 15px;
@@ -68,9 +65,38 @@
             color: #f1f1f1;
             font-family: Consolas, 'Courier New', monospace;
         }
+
         pre code {
-            white-space: pre-wrap;
+            color: #ffffff;
         }
+
+        .keyword {
+            color: #66b3ff;
+        }
+
+        .string {
+            color: #ecc48d;
+        }
+
+        .number {
+            color: #ffab91;
+        }
+
+        .function {
+            color: #82aaff;
+        }
+
+        .comment {
+            color: #7c7c7c;
+            font-style: italic;
+        }
+
+        .example-title {
+            color: #a3d5ff;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
         .copy-button {
             position: absolute;
             top: 10px;
@@ -84,18 +110,10 @@
             font-size: 12px;
             transition: background-color 0.3s ease;
         }
+
         .copy-button:hover {
             background-color: #4fa3d1;
         }
-        /* Syntax Highlighting */
-        .keyword { color: #66b3ff; }
-        .string { color: #ecc48d; }
-        .number { color: #ffab91; }
-        .function { color: #82aaff; }
-        .comment { color: #7c7c7c; font-style: italic; }
-        .boolean { color: #ff8b50; }
-        .nil { color: #d16d92; }
-        .metamethod { color: #c678dd; }
     </style>
     <script>
         function copyCode(button) {
@@ -105,46 +123,33 @@
                 setTimeout(() => { button.innerText = 'Copy'; }, 1500);
             });
         }
-
-        function applySyntaxHighlighting() {
-            document.querySelectorAll('pre code').forEach((block) => {
-                block.innerHTML = block.innerHTML
-                    .replace(/\b(function|local|end|if|then|else|for|while|return|do|not|and|or|repeat|until)\b/g, '<span class="keyword">$1</span>')
-                    .replace(/\b(true|false)\b/g, '<span class="boolean">$1</span>')
-                    .replace(/\b(nil)\b/g, '<span class="nil">$1</span>')
-                    .replace(/(".*?"|\'.*?\')/g, '<span class="string">$1</span>')
-                    .replace(/\b(\d+)\b/g, '<span class="number">$1</span>')
-                    .replace(/(--.*?$)/gm, '<span class="comment">$1</span>')
-                    .replace(/\b(setmetatable|getmetatable|pairs|ipairs|next|assert|pcall|xpcall|type|tonumber|tostring|print|warn|error|coroutine\.\w+|math\.\w+|table\.\w+|string\.\w+|debug\.\w+|os\.\w+)\b/g, '<span class="metamethod">$1</span>')
-                    .replace(/\b([a-zA-Z_][a-zA-Z0-9_]*)\(/g, '<span class="function">$1</span>(');
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', applySyntaxHighlighting);
     </script>
 </head>
+
 <body>
     <header>
-        <img src="/assets/icon.png" alt="Blasters Logo">
         <h1>Blasters</h1>
     </header>
     <main>
         <section id="blaster-client">
             <h2>Class: BlasterClient</h2>
-            <p>The <code>BlasterClient</code> class is responsible for managing blaster weapons and their interactions in the game.</p>
+            <p>The <code>BlasterClient</code> class is responsible for managing blaster weapons and their interactions
+                in the game.</p>
 
             <h3>Functions</h3>
             <ul>
-                <li><code>BlasterClient:Shoot(targetPosition: Vector3)</code>: Fires a blaster shot at the specified target position.</li>
+                <li><code>BlasterClient:Shoot(targetPosition: Vector3)</code>: Fires a blaster shot at the specified
+                    target position.</li>
                 <li><code>BlasterClient:Reload()</code>: Reloads the blaster.</li>
                 <li><code>BlasterClient:SetDamage(damage: number)</code>: Sets the damage dealt by the blaster.</li>
             </ul>
 
             <h3>Example Usage</h3>
             <div class="example">
-                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code>local blaster = BlasterClient.new()
-blaster:SetDamage(50)
-blaster:Shoot(Vector3.new(10, 0, 10))</code></pre>
+                <div class="example-title">Shooting a blaster</div>
+                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code><span class="keyword">local</span> blaster = <span class="function">BlasterClient.new</span>()
+blaster:<span class="function">SetDamage</span>(<span class="number">50</span>)
+blaster:<span class="function">Shoot</span>(<span class="function">Vector3.new</span>(<span class="number">10</span>, <span class="number">0</span>, <span class="number">10</span>))</code></pre>
             </div>
         </section>
 
@@ -160,9 +165,10 @@ blaster:Shoot(Vector3.new(10, 0, 10))</code></pre>
 
             <h3>Example Usage</h3>
             <div class="example">
-                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code>local bullet = Bullet.new()
-bullet:SetSpeed(100)
-bullet:Destroy()</code></pre>
+                <div class="example-title">Creating and configuring a bullet</div>
+                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code><span class="keyword">local</span> bullet = <span class="function">Bullet.new</span>()
+bullet:<span class="function">SetSpeed</span>(<span class="number">100</span>)
+bullet:<span class="function">Destroy</span>()</code></pre>
             </div>
         </section>
 
@@ -178,9 +184,10 @@ bullet:Destroy()</code></pre>
 
             <h3>Example Usage</h3>
             <div class="example">
-                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code>local recoil = Recoil.new()
-recoil:Apply(5)
-recoil:Reset()</code></pre>
+                <div class="example-title">Applying recoil</div>
+                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code><span class="keyword">local</span> recoil = <span class="function">Recoil.new</span>()
+recoil:<span class="function">Apply</span>(<span class="number">5</span>)
+recoil:<span class="function">Reset</span>()</code></pre>
             </div>
         </section>
 
@@ -196,12 +203,14 @@ recoil:Reset()</code></pre>
 
             <h3>Example Usage</h3>
             <div class="example">
-                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code>local exhaust = Exhaust.new()
-exhaust:Emit(20)
-wait(2)
-exhaust:Stop()</code></pre>
+                <div class="example-title">Using exhaust effects</div>
+                <pre><button class="copy-button" onclick="copyCode(this)">Copy</button><code><span class="keyword">local</span> exhaust = <span class="function">Exhaust.new</span>()
+exhaust:<span class="function">Emit</span>(<span class="number">20</span>)
+<span class="function">wait</span>(<span class="number">2</span>)
+exhaust:<span class="function">Stop</span>()</code></pre>
             </div>
         </section>
     </main>
 </body>
+
 </html>

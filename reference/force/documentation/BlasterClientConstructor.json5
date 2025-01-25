@@ -3,7 +3,7 @@
     "documentation_section": {
         "type": "Constructor",
         "name": "BlasterClientConstructor",
-        "description": "**BlasterClientConstructor** is able to construct and fetch [BlasterClient](./BlasterClient) Classes."
+        "description": "<b>BlasterClientConstructor</b> is able to construct and fetch <a class=\"documentationBoxReference\"href=\"./BlasterClient\">BlasterClient</a> Classes."
     },
     "properties": {
         "Presets": {

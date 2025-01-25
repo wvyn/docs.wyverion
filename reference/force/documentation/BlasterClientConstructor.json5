@@ -22,18 +22,18 @@ print(BlasterClientConstructor.Presets[\"E-11\"].BlasterType) --> Automatic \
         },
         "_blasterClientMethods": {
             "types": { "Dictionary": "https://create.roblox.com/docs/luau/tables#dictionaries" },
-            "summary": "Contains __index BlasterClient methods for constructor metatables.",
-            "description": "Contains __index BlasterClient methods for constructor metatables." /* Make it automatically recognize and automatically do box references */
+            "summary": "Contains __index [BlasterClient](./BlasterClient) methods for constructor metatables.",
+            "description": "Contains __index [BlasterClient](./BlasterClient) methods for constructor metatables."
         },
         "_blasters": {
             "types": { "Dictionary": "https://create.roblox.com/docs/luau/tables#dictionaries" },
-            "summary": "Contains every BlasterClient class in a Dictionary.",
-            "description": "Contains every BlasterClient class in a Dictionary."
+            "summary": "Contains every [BlasterClient](./BlasterClient) class in a Dictionary.",
+            "description": "Contains every [BlasterClient](./BlasterClient) class in a Dictionary."
         },
         "_hitEffects": {
             "types": { "Dictionary": { "_this": "https://create.roblox.com/docs/luau/tables#dictionaries", "function": "https://create.roblox.com/docs/luau/functions" } },
-            "summary": "Contains functions for every hit effect in a Dictionary.",
-            "description": "Contains functions for every hit effect in a Dictionary."
+            "summary": "Contains functions for every hit effect in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries).",
+            "description": "Contains functions for every hit effect in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries)."
         }
     }
 }

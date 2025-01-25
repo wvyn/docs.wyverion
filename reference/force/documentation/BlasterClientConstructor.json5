@@ -2,6 +2,7 @@
     "header": "FORCE Documentation",
     "documentation_section": {
         "type": "Constructor",
+        "name": "BlasterClientConstructor",
         "description": "**BlasterClientConstructor** is able to construct and fetch [BlasterClient](./BlasterClient) Classes."
     },
     "properties": {

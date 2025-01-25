@@ -1,15 +1,4 @@
-# START
-title: "Blasters | Documentation"
-description: "Documentation for Blasters in the game FORCE."
-header_title: "FORCE Documentation"
-og_type: "website"
-og_title: "Blasters | Documentation - Wyverion Development"
-og_description: "Documentation for Blasters in the game FORCE."
-og_url: "docs.wyverion.com/force/blasters"
-og_site_name: "Blasters Documentation"
-favicon: "https://docs.wyverion.com/assets/icon.ico"
-stylesheet: "documentation.css"
-# END
+FORCE Documentation
 
 # **`Constructor`** BlasterClientConstructor
 **BlasterClientConstructor** is able to construct and fetch [BlasterClient](./BlasterClient) Classes.

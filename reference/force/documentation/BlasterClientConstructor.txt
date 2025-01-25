@@ -1,6 +1,6 @@
 FORCE Documentation
 
-# **`Constructor`** BlasterClientConstructor
+Constructor BlasterClientConstructor
 **BlasterClientConstructor** is able to construct and fetch [BlasterClient](./BlasterClient) Classes.
 
 -----

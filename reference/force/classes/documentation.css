@@ -1,0 +1,199 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #f1f1f1d8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #212121;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+header h1 {
+    margin: 0;
+    color: rgb(255, 255, 255);
+}
+
+main {
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #212121;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+main h1 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+h2,
+h3 {
+    color: #fff;
+}
+
+h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.method-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.method-item {
+    margin-bottom: 20px;
+}
+
+.method-item h4 {
+    color: #66b3ff;
+    margin: 5px 0;
+}
+
+.method-item p {
+    color: #ccc;
+    margin: 5px 0;
+}
+
+.parameter-table,
+.returns-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.parameter-table td,
+.returns-table td {
+    border-bottom: 1px solid #444;
+    padding: 8px;
+    text-align: left;
+}
+
+.parameter-table td:first-child,
+.returns-table td:first-child {
+    border-right: 1px solid #444;
+}
+
+.parameter-table td a,
+.returns-table td a {
+    color: #66b3ff;
+    text-decoration: none;
+}
+
+.documentationReference {
+    color: rgb(0, 110, 219);
+    text-decoration: none;
+}
+
+.documentationBoxReference {
+    background-color: rgba(0, 69, 219, 0.145);
+    padding: 5px 5px;
+
+    color: rgb(0, 142, 219);
+    text-decoration: none;
+
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.summaryMethod {
+    color: rgb(255, 255, 255);
+}
+
+.propertyType {
+    color: rgb(0, 110, 219);
+    font-size: 75%;
+    font-weight: 500;
+}
+
+.explanation p {
+    font-size: 110%;
+}
+
+.documentationReference:hover {
+    text-decoration: underline;
+}
+
+.externalDocumentationReference {
+    color: rgb(255, 255, 255);
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+hr {
+    width: 100%;
+    border: none;
+    margin-top: 20px; 
+    margin-bottom: -5px; 
+    border-top: 1px solid rgba(255, 255, 255, 0.068);
+}
+
+.hrseparator {
+    height: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0);
+}
+
+pre {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 14px;
+    position: relative;
+    color: #f1f1f1;
+    font-family: Consolas, 'Courier New', monospace;
+}
+
+pre code {
+    color: #ccc;
+}
+
+.classTitle {
+    color: rgb(0, 142, 219);
+}
+
+._keyword {
+    color: rgb(248, 109, 124);
+}
+
+._string {
+    color: rgb(173, 241, 149);
+}
+
+._number {
+    color: rgb(255, 198, 0);
+}
+
+._function {
+    color: rgb(248, 109, 124);
+}
+
+._comment {
+    color: rgb(102, 102, 102);
+    font-style: italic;
+}
+
+._localproperty {
+    color: rgb(0, 139, 219);
+}
+
+._localmethod {
+    color: rgb(253, 251, 172);
+}
+
+._builtinfunction {
+    color: rgb(132, 214, 247);
+}

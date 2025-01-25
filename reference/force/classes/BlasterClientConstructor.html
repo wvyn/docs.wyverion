@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blasters | Documentation - Wyverion Development">
+    <meta property="og:description" content="Documentation for Blasters in the game FORCE." />
+    <meta property="og:url" content="docs.wyverion.com/force/blasters">
+    <meta property="og:site_name" content="Blasters Documentation">
+    <title>Blasters | Documentation</title>
+    <link rel="icon" href="https://docs.wyverion.com/assets/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="documentation.css">
+</head>
+
+<body>
+    <header>
+        <h1>FORCE Documentation</h1>
+    </header>
+    <main>
+        <section id="class-info">
+            <h1><span class="classTitle"><code>Constructor</code></span> BlasterClientConstructor</h1>
+            <b>BlasterClientConstructor</b> is able to construct and fetch <a class="documentationBoxReference"
+                href="./BlasterClient">BlasterClient</a> Classes.
+        </section>
+
+        <section id="summary">
+            <h1>Summary</h1>
+            <hr class="hrseparator">
+            <h3>Properties</h3>
+            <h4 class="summaryMethod"><a href="../enums/Presets" class="documentationReference">Presets</a> : <a
+                    href="../enums/Presets" class="externalDocumentationReference">Presets</a></h4>
+            Presets for all blasters.
+            <hr>
+            <h4 class="summaryMethod"><a href="#_blasterClientMethods"
+                    class="documentationReference">_blasterClientMethods</a> : <a
+                    href="https://create.roblox.com/docs/luau/tables#dictionaries"
+                    class="externalDocumentationReference">Dictionary</a></h4>
+            Contains <code>__index</code> <a class="documentationBoxReference" href="./BlasterClient">BlasterClient</a>
+            methods for constructor metatables.
+            <hr>
+            <h4 class="summaryMethod"><a href="#_blasters" class="documentationReference">_blasters</a> : <a
+                    href="https://create.roblox.com/docs/luau/tables#dictionaries"
+                    class="externalDocumentationReference">Dictionary</a><a href="./BlasterClient"
+                    class="externalDocumentationReference">&lt;BlasterClient&gt;</a></h4>
+            Contains every <a class="documentationBoxReference" href="./BlasterClient">BlasterClient</a> class in a <a
+                class="documentationBoxReference"
+                href="https://create.roblox.com/docs/luau/tables#dictionaries">Dictionary</a>.
+            <hr>
+            <h4 class="summaryMethod"><a href="#_hitEffects" class="documentationReference">_hitEffects</a> : <a
+                    href="https://create.roblox.com/docs/luau/tables#dictionaries"
+                    class="externalDocumentationReference">Dictionary</a><a
+                    href="https://create.roblox.com/docs/luau/functions"
+                    class="externalDocumentationReference">&lt;function&gt;</a></h4>
+            Contains functions for every hit effect in a <a class="documentationBoxReference"
+                href="https://create.roblox.com/docs/luau/tables#dictionaries">Dictionary</a>.
+
+            <hr class="hrseparator">
+            <h3>Methods</h3>
+            <h4 class="summaryMethod"><a href="#new" class="documentationReference">new</a> (character : <a
+                href="https://create.roblox.com/docs/reference/engine/classes/Model"
+                class="externalDocumentationReference">Model</a>, tool : <a
+                href="https://create.roblox.com/docs/reference/engine/classes/Tool"
+                class="externalDocumentationReference">Tool</a>, blasterStats : <a
+                href="../enums/BlasterStats"
+                class="externalDocumentationReference">BlasterStats?</a>) : <a
+                    href="./BlasterClient" class="externalDocumentationReference">BlasterClient</a></h4>
+            Creates a new <a class="documentationBoxReference" href="./BlasterClient">BlasterClient</a>.
+            <hr>
+            <h4 class="summaryMethod"><a href="#GetBlasterClientFromTool"
+                    class="documentationReference">GetBlasterClientFromTool</a> (tool : <a
+                    href="https://create.roblox.com/docs/reference/engine/classes/Tool"
+                    class="externalDocumentationReference">Tool</a>) : <a href="./BlasterClient"
+                    class="externalDocumentationReference">BlasterClient?</a></h4>
+            Returns a <a class="documentationBoxReference" href="./BlasterClient">BlasterClient</a> for the given tool.
+
+            <hr class="hrseparator">
+            <h3>Signals</h3>
+            <h3>OnBlasterAdded</h3>
+            Fires when <a class="documentationBoxReference" href="./BlasterClient">BlasterClient</a> gets added to <a
+                href="#_blasters" class="documentationBoxReference">_blasters</a>.
+        </section>
+
+        <section id="properties" class="explanation">
+            <h1>Properties</h1>
+            <hr class="hrseparator">
+
+            <h2>Presets <a class="propertyType documentationReference" href="../enums/Presets">Presets</a></h2>
+            <p>
+                This property holds all the information about blasters. You can use it to either modify or view blaster
+                data.
+                Keep in mind that when you change data in the presets, those changes will only apply to new blasters.
+                If you need to update existing blasters, you'll have to manually adjust the
+                <a class="documentationBoxReference" href="./BlasterClient#BlasterStats">BlasterClient.BlasterStats</a>.
+            <pre><code>local BlasterClientConstructor = require("BlasterClient")
+BlasterClientConstructor.Presets["E-11"].Firerate = 0.2 -- New E-11 Blasters will have a 0.2 Firerate
+print(BlasterClientConstructor.Presets["E-11"].BlasterType) --> Automatic</code></pre>
+            <p>
+                <hr>
+            <h2>_blasterClientMethods <a class="propertyType documentationReference"
+                    href="https://create.roblox.com/docs/luau/tables#dictionaries">Dictionary</a></h2>
+            <p>
+                Contains <code>__index</code> <a class="documentationBoxReference"
+                    href="./BlasterClient">BlasterClient</a>
+                methods for constructor metatables.
+            </p>
+            <hr>
+            <h2>_blasters <a class="propertyType documentationReference"
+                    href="https://create.roblox.com/docs/luau/tables#dictionaries">Dictionary</a><a href="./BlasterClient"
+                    class="propertyType documentationReference">&lt;BlasterClient&gt;</a></h2>
+            <p>
+                Contains every <a class="documentationBoxReference" href="./BlasterClient">BlasterClient</a> class in a <a
+                class="documentationBoxReference"
+                href="https://create.roblox.com/docs/luau/tables#dictionaries">Dictionary</a>.
+            </p>
+            <hr>
+            <h2>_hitEffects <a class="propertyType documentationReference"
+                    href="https://create.roblox.com/docs/luau/tables#dictionaries">Dictionary</a><a href="https://create.roblox.com/docs/luau/functions"
+                    class="propertyType documentationReference">&lt;function&gt;</a></h2>
+            <p>
+                Contains every <a class="documentationBoxReference" href="./BlasterClient">BlasterClient</a> class in a <a
+                class="documentationBoxReference"
+                href="https://create.roblox.com/docs/luau/tables#dictionaries">Dictionary</a>.
+            </p>
+        </section>
+
+        <section id="methods" class="explanation">
+            <h1>Methods</h1>
+            <hr class="hrseparator">
+            <h2>new <a class="propertyType documentationReference" href="./BlasterClient">BlasterClient</a></h2>
+            <p>
+                Creates a new <a class="documentationBoxReference" href="./BlasterClient">BlasterClient</a> class which allows you to interact with the blaster's functions.
+                <pre><code>local BlasterClientConstructor = require("BlasterClient")
+game:GetService("Players").PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(character)
+        local BlasterClient = BlasterClientConstructor.new(character, player.Backpack["E-11"])
+        print(BlasterClient)
+    end)
+end)</code></pre>
+            </p>
+            <hr>
+            <h2>GetBlasterClientFromTool <a class="propertyType documentationReference" href="./BlasterClient">BlasterClient</a></h2>
+            <p>
+                Finds an existing BlasterClient <a class="documentationBoxReference" href="./BlasterClient">BlasterClient</a> from a <a
+                href="https://create.roblox.com/docs/reference/engine/classes/Tool"
+                class="documentationBoxReference">Tool</a>
+                <pre><code>local BlasterClientConstructor = require("BlasterClient")
+local BlasterClient = BlasterClientConstructor:GetBlasterClientFromTool(game:GetService("Players").Wyv_n.Backpack["E-11"])</code></pre>
+            </p>
+        </section>
+    </main>
+
+    <script src="./syntaxHighlighting.js"></script>
+</body>
+
+</html>

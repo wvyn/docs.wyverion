@@ -21,19 +21,43 @@ print(BlasterClientConstructor.Presets[\"E-11\"].BlasterType) --> Automatic\
 ```"
         },
         "_blasterClientMethods": {
-            "types": { "Dictionary": "https://create.roblox.com/docs/luau/tables#dictionaries" },
             "summary": "Contains __index [BlasterClient](./BlasterClient) methods for constructor metatables.",
-            "description": "Contains __index [BlasterClient](./BlasterClient) methods for constructor metatables."
+            "description": "Contains __index [BlasterClient](./BlasterClient) methods for constructor metatables.",
+            "types": { "Dictionary": "https://create.roblox.com/docs/luau/tables#dictionaries" }
         },
         "_blasters": {
-            "types": { "Dictionary": "https://create.roblox.com/docs/luau/tables#dictionaries" },
             "summary": "Contains every [BlasterClient](./BlasterClient) class in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries).",
-            "description": "Contains every [BlasterClient](./BlasterClient) class in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries)."
+            "description": "Contains every [BlasterClient](./BlasterClient) class in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries).",
+            "types": { "Dictionary": "https://create.roblox.com/docs/luau/tables#dictionaries" }
         },
         "_hitEffects": {
-            "types": { "Dictionary": { "_this": "https://create.roblox.com/docs/luau/tables#dictionaries", "function": "https://create.roblox.com/docs/luau/functions" } },
             "summary": "Contains functions for every hit effect in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries).",
-            "description": "Contains functions for every hit effect in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries)."
+            "description": "Contains functions for every hit effect in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries).",
+            "types": { "Dictionary": { "_this": "https://create.roblox.com/docs/luau/tables#dictionaries", "function": "https://create.roblox.com/docs/luau/functions" } }
+        }
+    },
+    "methods": {
+        "new": {
+            "summary": "Creates a new [BlasterClient](./BlasterClient).",
+            "description": "Creates a new [BlasterClient](./BlasterClient) class which allows you to interact with the blaster's functions.",
+            "parameters": {
+                "character": "https://create.roblox.com/docs/reference/engine/classes/Model",
+                "tool": "https://create.roblox.com/docs/reference/engine/classes/Tool",
+                "blasterStats": "https://docs.wyverion.com/reference/force/enums/BlasterStats"
+            },
+            "returns": { 
+                "BlasterClient": "./BlasterClient" 
+            }
+        },
+        "GetBlasterClientFromTool": {
+            "summary": "Returns a [BlasterClient](./BlasterClient) from a given tool.",
+            "description": "Finds an existing [BlasterClient](./BlasterClient) from a [Tool](https://create.roblox.com/docs/reference/engine/classes/Tool)",
+            "parameters": {
+                "tool": "https://create.roblox.com/docs/reference/engine/classes/Tool"
+            },
+            "returns": { 
+                "BlasterClient": "./BlasterClient" 
+            }
         }
     }
 }

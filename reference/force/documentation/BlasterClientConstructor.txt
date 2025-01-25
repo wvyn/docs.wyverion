@@ -1,7 +1,7 @@
 # START
 title: "Blasters | Documentation"
 description: "Documentation for Blasters in the game FORCE."
-bar_title: "FORCE Documentation"
+header_title: "FORCE Documentation"
 og_type: "website"
 og_title: "Blasters | Documentation - Wyverion Development"
 og_description: "Documentation for Blasters in the game FORCE."

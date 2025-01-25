@@ -92,6 +92,11 @@ h3 {
     text-decoration: none;
 }
 
+.documentationSpanReference {
+    color: rgb(0, 110, 219);
+    font-size: 75%;
+}
+
 .documentationReference {
     color: rgb(0, 110, 219);
     text-decoration: none;
@@ -114,7 +119,6 @@ h3 {
 
 .propertyType {
     color: rgb(0, 110, 219);
-    font-size: 75%;
     font-weight: 500;
 }
 
@@ -126,6 +130,15 @@ h3 {
 .methodParameters {
     color: rgb(255, 255, 255);
     font-weight: 500;
+}
+
+.tableTypeContainer {
+    background-color: #333333;
+    border: 1px solid rgba(255, 255, 255, 0.068);
+}
+
+.tableTypeContainer p {
+    margin: 15px;
 }
 
 .explanation p {
@@ -141,6 +154,10 @@ h3 {
     text-decoration-style: dashed;
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
+}
+
+.externalObjectDocumentationReference {
+    color: rgb(255, 255, 255);
 }
 
 hr {

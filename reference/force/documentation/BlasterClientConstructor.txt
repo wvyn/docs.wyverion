@@ -1,4 +1,4 @@
--HEADER-
+# Header
 title: "Blasters | Documentation"
 description: "Documentation for Blasters in the game FORCE."
 bar_title: "FORCE Documentation"
@@ -9,7 +9,7 @@ og_url: "docs.wyverion.com/force/blasters"
 og_site_name: "Blasters Documentation"
 favicon: "https://docs.wyverion.com/assets/icon.ico"
 stylesheet: "documentation.css"
--END-
+# Header End
 
 # **`Constructor`** BlasterClientConstructor
 **BlasterClientConstructor** is able to construct and fetch [BlasterClient](./BlasterClient) Classes.

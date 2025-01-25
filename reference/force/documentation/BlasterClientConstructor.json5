@@ -7,7 +7,8 @@
     },
     "properties": {
         "Presets": {
-            "title": { "propertyType": "Presets", "propertyTypeURL": "../enums/Presets" },
+            "type": "Presets",
+            "typeURL": "../enums/Presets",
             "summary": "Presets for all blasters.",
             "description": "\
 This property holds all the information about blasters. \

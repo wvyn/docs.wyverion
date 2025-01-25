@@ -15,9 +15,9 @@ You can use it to either modify or view blaster data. \
 Keep in mind that when you change data in the presets, those changes will only apply to new blasters. \
 If you need to update existing blasters, you'll have to manually adjust the [BlasterClient.BlasterStats](./BlasterClient#BlasterStats). \
 ```lua\
-local BlasterClientConstructor = require(\"BlasterClient\") \
-BlasterClientConstructor.Presets[\"E-11\"].Firerate = 0.2 -- New E-11 Blasters will have a 0.2 Firerate \
-print(BlasterClientConstructor.Presets[\"E-11\"].BlasterType) --> Automatic \
+local BlasterClientConstructor = require(\"BlasterClient\")\n\
+BlasterClientConstructor.Presets[\"E-11\"].Firerate = 0.2 -- New E-11 Blasters will have a 0.2 Firerate\n\
+print(BlasterClientConstructor.Presets[\"E-11\"].BlasterType) --> Automatic\
 ```"
         },
         "_blasterClientMethods": {
@@ -27,8 +27,8 @@ print(BlasterClientConstructor.Presets[\"E-11\"].BlasterType) --> Automatic \
         },
         "_blasters": {
             "types": { "Dictionary": "https://create.roblox.com/docs/luau/tables#dictionaries" },
-            "summary": "Contains every [BlasterClient](./BlasterClient) class in a Dictionary.",
-            "description": "Contains every [BlasterClient](./BlasterClient) class in a Dictionary."
+            "summary": "Contains every [BlasterClient](./BlasterClient) class in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries).",
+            "description": "Contains every [BlasterClient](./BlasterClient) class in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries)."
         },
         "_hitEffects": {
             "types": { "Dictionary": { "_this": "https://create.roblox.com/docs/luau/tables#dictionaries", "function": "https://create.roblox.com/docs/luau/functions" } },

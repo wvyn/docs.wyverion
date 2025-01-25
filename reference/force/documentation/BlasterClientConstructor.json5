@@ -49,6 +49,7 @@ game:GetService(\"Players\").PlayerAdded:Connect(function(player)\n\
         print(BlasterClient)\n\
     end)\n\
 end)\n\
+```\
 ",
             "parameters": {
                 "character": ["Model", "https://create.roblox.com/docs/reference/engine/classes/Model"],

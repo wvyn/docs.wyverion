@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="" id="ogTitle">
+    <meta property="og:description" content="" id="ogDescription">
+    <meta property="og:url" content="" id="ogUrl">
+    <meta property="og:site_name" content="Documentation" id="ogSiteName">
     <title>Documentation</title>
-    <link rel="icon" href="/assets/icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/404.css" id="defaultStylesheet">
+    <link rel="icon" href="https://docs.wyverion.com/assets/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/404.css" id="defaultStylesheet"> <!-- Default to 404 stylesheet -->
     <script>
         window.onload = function() {
             const currentUrl = window.location.pathname;
@@ -13,26 +19,50 @@
 
             if (match) {
                 const className = match[1];
+                // Try to fetch the class documentation JSON file
                 fetch(`/reference/force/documentation/${className}.json5`)
                     .then(response => {
                         if (response.ok) {
-                            document.getElementById('defaultStylesheet').href = '/reference/force/documentation.css';
-                            const script = document.createElement('script');
-                            script.src = '/reference/force/documentation.js';
-                            document.head.appendChild(script);
+                            response.json().then(data => {
+                                // Set Open Graph meta tags
+                                document.getElementById('ogTitle').content = `${className} | Documentation`;
+                                document.getElementById('ogDescription').content = `Documentation for ${className} in the game FORCE.`;
+                                document.getElementById('ogUrl').content = `https://docs.wyverion.com/force/classes/${className}`;
+                                document.getElementById('ogSiteName').content = `${className} Documentation`;
+
+                                // Change the stylesheet to the documentation one
+                                document.getElementById('defaultStylesheet').href = '/reference/force/documentation.css';
+
+                                // Inject the required JavaScript
+                                const documentationScript = document.createElement('script');
+                                documentationScript.src = '/reference/force/documentation.js';
+                                document.head.appendChild(documentationScript);
+
+                                // Optionally, you can handle additional JavaScript like syntax highlighting here
+                                const syntaxScript = document.createElement('script');
+                                syntaxScript.src = '/reference/force/syntaxHighlighting.js';
+                                document.head.appendChild(syntaxScript);
+
+                                // You can now use the fetched `data` to dynamically create documentation content
+                                // For example, load the documentation into the body, etc.
+                            });
                         } else {
+                            // If the documentation file is not found, show 404
                             show404();
                         }
                     })
                     .catch(() => {
+                        // Handle fetch error (e.g., network issues)
                         show404();
                     });
             } else {
+                // If the URL doesn't match the expected pattern, show 404
                 show404();
             }
         };
 
         function show404() {
+            // Show the 404 content if documentation not found
             document.body.innerHTML = `
                 <div class="container">
                     <h1>404</h1>
@@ -44,15 +74,18 @@
                     <p>&copy; 2025 Wyverion. All rights reserved. <a href="https://wyverion.com">Visit Wyverion</a>.</p>
                 </footer>
             `;
+            // Optionally, add the 404 CSS in case it's still needed:
             document.head.appendChild(document.createElement('link')).rel = 'stylesheet';
             document.head.lastChild.href = '/404.css';
         }
     </script>
 </head>
+
 <body>
     <div class="container">
         <h1>Loading...</h1>
         <p>If you're seeing this, we're checking for documentation...</p>
     </div>
 </body>
+
 </html>

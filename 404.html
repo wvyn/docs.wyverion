@@ -3,19 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
+    <title>Documentation</title>
     <link rel="icon" href="/assets/icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/404.css">
+    <link rel="stylesheet" href="/404.css" id="defaultStylesheet">
+    <script>
+        window.onload = function() {
+            const currentUrl = window.location.pathname;
+            const match = currentUrl.match(/^\/reference\/force\/classes\/([^\/]+)$/);
+
+            if (match) {
+                const className = match[1];
+                fetch(`/reference/force/documentation/${className}.json5`)
+                    .then(response => {
+                        if (response.ok) {
+                            document.getElementById('defaultStylesheet').href = '/reference/force/documentation.css';
+                            const script = document.createElement('script');
+                            script.src = '/reference/force/documentation.js';
+                            document.head.appendChild(script);
+                        } else {
+                            show404();
+                        }
+                    })
+                    .catch(() => {
+                        show404();
+                    });
+            } else {
+                show404();
+            }
+        };
+
+        function show404() {
+            document.body.innerHTML = `
+                <div class="container">
+                    <h1>404</h1>
+                    <p>Oops! The page you're looking for can't be found.</p>
+                    <p>Try going back to the <a href="/">home page</a> or check the URL for any errors.</p>
+                    <a href="/" class="button">Back to Home</a>
+                </div>
+                <footer>
+                    <p>&copy; 2025 Wyverion. All rights reserved. <a href="https://wyverion.com">Visit Wyverion</a>.</p>
+                </footer>
+            `;
+            document.head.appendChild(document.createElement('link')).rel = 'stylesheet';
+            document.head.lastChild.href = '/404.css';
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>404</h1>
-        <p>Oops! The page you're looking for can't be found.</p>
-        <p>Try going back to the <a href="/">home page</a> or check the URL for any errors.</p>
-        <a href="/" class="button">Back to Home</a>
+        <h1>Loading...</h1>
+        <p>If you're seeing this, we're checking for documentation...</p>
     </div>
-    <footer>
-        <p>&copy; 2025 Wyverion. All rights reserved. <a href="https://wyverion.com">Visit Wyverion</a>.</p>
-    </footer>
 </body>
 </html>

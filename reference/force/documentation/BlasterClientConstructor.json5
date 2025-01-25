@@ -41,9 +41,9 @@ print(BlasterClientConstructor.Presets[\"E-11\"].BlasterType) --> Automatic\
             "summary": "Creates a new [BlasterClient](./BlasterClient).",
             "description": "Creates a new [BlasterClient](./BlasterClient) class which allows you to interact with the blaster's functions.",
             "parameters": {
-                "character": "https://create.roblox.com/docs/reference/engine/classes/Model",
-                "tool": "https://create.roblox.com/docs/reference/engine/classes/Tool",
-                "blasterStats": "https://docs.wyverion.com/reference/force/enums/BlasterStats"
+                "character": ["Model", "https://create.roblox.com/docs/reference/engine/classes/Model"],
+                "tool": ["Tool", "https://create.roblox.com/docs/reference/engine/classes/Tool"],
+                "blasterStats": ["BlasterStats", "https://docs.wyverion.com/reference/force/enums/BlasterStats"]
             },
             "returns": { 
                 "BlasterClient": "./BlasterClient" 
@@ -53,7 +53,7 @@ print(BlasterClientConstructor.Presets[\"E-11\"].BlasterType) --> Automatic\
             "summary": "Returns a [BlasterClient](./BlasterClient) from a given tool.",
             "description": "Finds an existing [BlasterClient](./BlasterClient) from a [Tool](https://create.roblox.com/docs/reference/engine/classes/Tool)",
             "parameters": {
-                "tool": "https://create.roblox.com/docs/reference/engine/classes/Tool"
+                "tool": ["Tool", "https://create.roblox.com/docs/reference/engine/classes/Tool"]
             },
             "returns": { 
                 "BlasterClient": "./BlasterClient" 

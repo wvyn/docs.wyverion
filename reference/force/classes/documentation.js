@@ -80,7 +80,7 @@ function typeParameters(parameters, propertyClass) {
 }
 
 function tableTypeAppending(tableTypes, section) {
-    const container = document.createElement("div"); // FINISH THIS
+    const container = document.createElement("div");
     container.classList.add("tableTypeContainer");
     section.appendChild(container)
 
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         sessionStorage.setItem('scrollPosition', window.scrollY);
     });
 
-    const response = await fetch("https://docs.wyverion.com/reference/force/documentation/BlasterClientConstructor.json5?quSsidddsaack")
+    const response = await fetch("../BlasterClientConstructor.json5")
     const constructor = JSON5.parse(await response.text())
 
     { // Header

@@ -7,23 +7,55 @@
     },
     "properties": {
         "Player": {
-            "type": [ "Dictionary", "https://create.roblox.com/docs/luau/tables#dictionaries" ],
+            "type": [ "Player", "https://create.roblox.com/docs/reference/engine/classes/Player" ],
             "summary": "The player associated with the blaster.",
             "description": "The character's player for the Blaster. If the character does not have a player, it will be [nil](https://create.roblox.com/docs/luau/nil)."
         },
     },
     "methods": {
         "Shoot": {
-            "summary": "Returns a [BlasterClient](./BlasterClient) from a given tool.",
+            "summary": "Fires blaster bullet(s) at a given position.",
             "description": "\
-Finds an existing [BlasterClient](./BlasterClient) from a [Tool](https://create.roblox.com/docs/reference/engine/classes/Tool)\
+You can use the Shoot method to fire blaster bullets at a position.\
+\n\
+Here is example of using the Shoot method for an NPC shooting at the closest players.\n\
 ```lua\
+-- [Services] --\n\
+local serverStorage = game:GetService(\"ServerStorage\")\n\
+local runService = game:GetService(\"RunService\")\n\
+local players = game:GetService(\"Players\")\n\
+\n\
 local BlasterClientConstructor = require(\"BlasterClient\")\n\
-local BlasterClient = BlasterClientConstructor:GetBlasterClientFromTool(game:GetService(\"Players\").Wyv_n.Backpack[\"E-11\"])\n\
+\n\
+-- [NPC] --\n\
+local NPC = workspace.NPC\n\
+local NPCHumanoidRootPart = NPC.HumanoidRootPart\n\
+\n\
+local Blaster = serverStorage.Blasters[\"E-11\"]:Clone()\n\
+\n\
+local BlasterClient = BlasterClientConstructor.new(NPC, Blaster)\n\
+\n\
+runService.Heartbeat:Connect(function()\n\
+    -- Getting the Closest Character within 200 Studs\n\
+    local closestCharacter, closestDistance = nil, 200\n\
+    for _, player in next, players:GetPlayers() do\n\
+        local character = player.Character\n\
+        local humanoidRootPart = character and character:FindFirstChild(\"HumanoidRootPart\")\n\
+        local distance = humanoidRootPart and (humanoidRootPart.Position - NPCHumanoidRootPart.Position).Magnitude\n\
+        if distance and distance < closestCharacter then\n\
+            closestCharacter, closestDistance = character, distance\n\
+        end\n\
+    end\n\
+    \n\
+    if closestCharacter then\n\
+        -- If it finds a character shoot at the Character's HumanoidRootPart position.\n\
+        BlasterClient:Shoot(closestCharacter.HumanoidRootPart.Position)\n\
+    end\n\
+end)\
 ```\
 ",
             "parameters": {
-                "tool": ["Tool", "https://create.roblox.com/docs/reference/engine/classes/Tool"]
+                "position": ["Vector3", "https://create.roblox.com/docs/reference/engine/datatypes/Vector3"]
             },
             "returns": { 
                 "BlasterClient": ["BlasterClient", "./BlasterClient"]

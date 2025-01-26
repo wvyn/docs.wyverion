@@ -104,7 +104,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         sessionStorage.setItem('scrollPosition', window.scrollY);
     });
 
-    const response = await fetch("https://docs.wyverion.com/reference/force/documentation/BlasterClientConstructor.json5")
+    const paths = window.location.pathname.split("/")
+    const lastPathName = paths[paths.length]
+
+    const response = await fetch(`https://docs.wyverion.com/reference/force/documentation/${lastPathName}.json5`)
     const constructor = JSON5.parse(await response.text())
 
     { // Header

@@ -27,7 +27,7 @@
             "description": "The tool contains all FirePoints needed for the bullets to fire from."
         },
         "BlasterStats": {
-            "type": [ "BlasterStats", "https://docs.wyverion.com/reference/force/datatypes/BlasterStats" ],
+            "type": [ "BlasterStats", "https://docs.wyverion.com/reference/force/enums/BlasterStats" ],
             "summary": "Contains properties of the BlasterClient class.",
             "description": "BlasterStats is required and used by the BlasterClient class, it contains all the properties all about the blaster, how it shoot and operates."
         },

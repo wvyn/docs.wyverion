@@ -114,7 +114,7 @@ end)\n\
             "summary": "A method where upon calling exhausts or reloads a blaster.",
             "description": "A method where upon calling exhausts or reloads a blaster.",
             "parameters": {
-                "ping": ["number", "https://create.roblox.com/docs/luau/numbers"]
+                "ping": ["number?", "https://create.roblox.com/docs/luau/numbers"]
             },
             "returns": { 
                 "success": ["boolean", "https://create.roblox.com/docs/luau/booleans"]

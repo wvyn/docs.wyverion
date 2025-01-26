@@ -7,7 +7,7 @@
     },
     "properties": {
         "Presets": {
-            "types": { "Presets": "../enums/Presets" },
+            "type": [ "Presets", "../enums/Presets" ],
             "summary": "Presets for all blasters.",
             "description": "\
 This property holds all the information about blasters. \
@@ -21,19 +21,19 @@ print(BlasterClientConstructor.Presets[\"E-11\"].BlasterType) --> Automatic\
 ```"
         },
         "_blasterClientMethods": {
+            "type": [ "Dictionary", "https://create.roblox.com/docs/luau/tables#dictionaries" ],
             "summary": "Contains __index [BlasterClient](./BlasterClient) methods for constructor metatables.",
-            "description": "Contains __index [BlasterClient](./BlasterClient) methods for constructor metatables.",
-            "types": [ "Dictionary", "https://create.roblox.com/docs/luau/tables#dictionaries" ]
+            "description": "Contains __index [BlasterClient](./BlasterClient) methods for constructor metatables."
         },
         "_blasters": {
+            "type": [ "Dictionary", "https://create.roblox.com/docs/luau/tables#dictionaries" ],
             "summary": "Contains every [BlasterClient](./BlasterClient) class in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries).",
-            "description": "Contains every [BlasterClient](./BlasterClient) class in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries).",
-            "types": [ "Dictionary", "https://create.roblox.com/docs/luau/tables#dictionaries" ]
+            "description": "Contains every [BlasterClient](./BlasterClient) class in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries)."
         },
         "_hitEffects": {
+            "type": [ "Dictionary",  { "_this": "https://create.roblox.com/docs/luau/tables#dictionaries", "function": "https://create.roblox.com/docs/luau/functions" } ],
             "summary": "Contains functions for every hit effect in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries).",
-            "description": "Contains functions for every hit effect in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries).",
-            "types": [ "Dictionary",  { "_this": "https://create.roblox.com/docs/luau/tables#dictionaries", "function": "https://create.roblox.com/docs/luau/functions" } ]
+            "description": "Contains functions for every hit effect in a [Dictionary](https://create.roblox.com/docs/luau/tables#dictionaries)."
         }
     },
     "methods": {

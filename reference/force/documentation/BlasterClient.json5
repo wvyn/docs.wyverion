@@ -16,7 +16,7 @@
         "Shoot": {
             "summary": "Fires blaster bullet(s) at a given position.",
             "description": "\
-You can use the Shoot method to fire blaster bullets at a position.\
+You can use the Shoot method to fire blaster bullets at a position. \
 Here is example of using the Shoot method for an NPC shooting at the closest players.\n\
 ```lua\
 -- [Services] --\n\
@@ -73,7 +73,25 @@ end)\n\
                 "position": ["Vector3", "https://create.roblox.com/docs/reference/engine/datatypes/Vector3"]
             },
             "returns": { 
-                "BlasterClient": ["BlasterClient", "./BlasterClient"]
+                "success": ["boolean", "https://create.roblox.com/docs/luau/booleans"]
+            }
+        },
+        "Exhaust": {
+            "summary": "A method where upon calling exhausts or reloads a blaster.",
+            "description": "A method where upon calling exhausts or reloads a blaster.",
+            "parameters": {
+                "ping": ["number", "https://create.roblox.com/docs/luau/numbers"]
+            },
+            "returns": { 
+                "success": ["boolean", "https://create.roblox.com/docs/luau/booleans"]
+            }
+        },
+        "Destroy": {
+            "summary": "Cleans up destroys the BlasterClient class.",
+            "description": "When destroying a Blaster this will disconnect all [Signals](./Signals), [RBXScriptConnections](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptConnection), and values in the class.",
+            "parameters": {},
+            "returns": { 
+                "success": ["boolean", "https://create.roblox.com/docs/luau/booleans"]
             }
         }
     }

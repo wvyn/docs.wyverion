@@ -1,0 +1,33 @@
+{
+    "header": "FORCE Documentation",
+    "documentation_section": {
+        "type": "Class",
+        "name": "BlasterClient",
+        "description": "**BlasterClient** is a controller for Blasters, constructed by [BlasterClientConstructor](./BlasterClientConstructor)."
+    },
+    "properties": {
+        "Player": {
+            "summary": "The player associated with the blaster.",
+            "description": "The character's player for the Blaster. If the character does not have a player, it will be [nil](https://create.roblox.com/docs/luau/nil).",
+            "type": ["Dictionary", "https://create.roblox.com/docs/luau/tables#dictionaries"]
+        },
+    },
+    "methods": {
+        "Shoot": {
+            "summary": "Returns a [BlasterClient](./BlasterClient) from a given tool.",
+            "description": "\
+Finds an existing [BlasterClient](./BlasterClient) from a [Tool](https://create.roblox.com/docs/reference/engine/classes/Tool)\
+```lua\
+local BlasterClientConstructor = require(\"BlasterClient\")\n\
+local BlasterClient = BlasterClientConstructor:GetBlasterClientFromTool(game:GetService(\"Players\").Wyv_n.Backpack[\"E-11\"])\n\
+```\
+",
+            "parameters": {
+                "tool": ["Tool", "https://create.roblox.com/docs/reference/engine/classes/Tool"]
+            },
+            "returns": { 
+                "BlasterClient": ["BlasterClient", "./BlasterClient"]
+            }
+        }
+    }
+}

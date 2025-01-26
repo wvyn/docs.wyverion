@@ -44,23 +44,20 @@ function documentationDescription(description) {
         });
 }
 
-function typeProperty(types, propertyClass, objectClass) {
+function typeProperty(propertyType, propertyClass, objectClass) {
     let typeHTMLArray = []
-    for (let typeName in types) {
-        const typeValue = types[typeName]
-        if (typeof (typeValue) == "string") {
-            typeHTMLArray.push(`<a href="${typeValue}" class="${propertyClass}">${typeName}</a>`)
-        } else if (typeof (typeValue) == "object") {
-            const objectTypes = []
-            for (let objectName in typeValue) {
-                if (objectName == "_this") continue;
 
-                const objectValue = typeValue[objectName]
-                objectTypes.push(`<a href="${objectValue}" class="${propertyClass}">${objectName}</a>`)
-            }
-
-            typeHTMLArray.push(`<a href="${typeValue._this}" class="${objectClass || propertyClass}">${typeName}</a><${objectTypes.join(", ")}>`)
+    if (typeof(propertyType[1]) == "string") {
+        typeHTMLArray.push(`<a href="${propertyType[1]}" class="${propertyClass}">${propertyType[0]}</a>`)
+    } else if (typeof(propertyType[1]) == "object") {
+        const objectTypes = []
+        for (let objectName in propertyType[1]) {
+            if (objectName == "_this") continue;
+            const objectValue = propertyType[1][objectName]
+            objectTypes.push(`<a href="${objectValue}" class="${propertyClass}">${objectName}</a>`)
         }
+
+        typeHTMLArray.push(`<a href="${propertyType[1]._this}" class="${objectClass || propertyClass}">${propertyType[0]}</a><${objectTypes.join(", ")}>`)
     }
 
     var typeHTML = typeHTMLArray.join(", ")
@@ -199,7 +196,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 const heading = document.createElement("h4");
                 heading.classList.add(`property_${propertyName}`)
 
-                const typeHTML = typeProperty(property.types, "externalDocumentationReference", "externalObjectDocumentationReference")
+                const typeHTML = typeProperty(property.type, "externalDocumentationReference", "externalObjectDocumentationReference")
 
                 heading.innerHTML = `<a href="#${propertyName}" class="documentationReference">${propertyName}</a> : ${typeHTML}`
 
@@ -211,7 +208,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 summaryPropertiesSpan.appendChild(document.createElement("hr"))
             } { // Properties
                 const heading = document.createElement("h2");
-                const typeHTML = typeProperty(property.types, "propertyType documentationReference")
+                const typeHTML = typeProperty(property.type, "propertyType documentationReference")
                 heading.innerHTML = `${propertyName} <span class="documentationSpanReference">${typeHTML}</span>`
                 propertiesSection.appendChild(heading)
 

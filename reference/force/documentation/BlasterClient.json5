@@ -7,7 +7,7 @@
     },
     "properties": {
         "Player": {
-            "type": ["Dictionary", "https://create.roblox.com/docs/luau/tables#dictionaries"],
+            "type": [ "Dictionary", "https://create.roblox.com/docs/luau/tables#dictionaries" ],
             "summary": "The player associated with the blaster.",
             "description": "The character's player for the Blaster. If the character does not have a player, it will be [nil](https://create.roblox.com/docs/luau/nil)."
         },

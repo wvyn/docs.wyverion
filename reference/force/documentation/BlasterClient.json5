@@ -38,6 +38,13 @@
 If the BlasterIndex is 1 then its the first BlasterClient class to be made, if its 17 then it's the 17th BlasterClient class to be made. \
 This is not synchronzied between Client and Server and are not dependent on each other."
         },
+        "FireSequenceIndex": {
+            "type": [ "number", "https://create.roblox.com/docs/luau/numbers" ],
+            "summary": "Used for Sequential Fire.",
+            "description": "\
+Used for Sequential Fire like Dual Blasters. If the Blaster FireType is Synchronized then this property would not be used.\
+If the FireType is Sequential, and there are two FirePoints, it'll alternate between those two. If you have more firing points, it'll take turns in a sweeping motion."
+        },
     },
     "methods": {
         "Shoot": {

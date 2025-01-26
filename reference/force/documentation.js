@@ -14,9 +14,10 @@ function updateSyntaxHighlighting() {
             .replace(/"[^"]*"/g, '<span class="_string">$&</span>')
             .replace(/(?<!["'])\b(\d+)\b(?!["'])/g, '<span class="_number">$1</span>')
             .replace(new RegExp(`\\b(${keywords.join('|')})\\b`, 'g'), '<span class="_keyword">$1</span>')
-            .replace(/(\w+):(\w+)\s*(\()/g, '$1:<span class="_localmethod">$2</span>$3') // Move this line up
-            .replace(new RegExp(`\\b(${functions.join('|')})\\b`, 'g'), '<span class="_builtinfunction">$1</span>') // Move this line down
+            .replace(/(\w+):(\w+)\s*(\()/g, '$1:<span class="_localmethod">$2</span>$3')
+            .replace(new RegExp(`\\b(${functions.join('|')})\\b`, 'g'), '<span class="_builtinfunction">$1</span>')
             .replace(/(\w+)\.(\w+)\s*(\()/g, '$1.<span class="_localmethod">$2</span>$3')
+            .replace(/(\w+)\](\w+)\s*(\()/g, '$1.<span class="_localmethod">$2</span>$3')
             .replace(/\.(\w+)\.(\w+)/g, '.<span class="_localproperty">$1</span>.<span class="_localproperty">$2</span>')
             .replace(/\]\.(\w+)/g, '].<span class="_localproperty">$1</span>')
             .replace(/\)\.(\w+)/g, ').<span class="_localproperty">$1</span>')

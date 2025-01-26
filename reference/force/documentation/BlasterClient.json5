@@ -17,7 +17,6 @@
             "summary": "Fires blaster bullet(s) at a given position.",
             "description": "\
 You can use the Shoot method to fire blaster bullets at a position.\
-\n\
 Here is example of using the Shoot method for an NPC shooting at the closest players.\n\
 ```lua\
 -- [Services] --\n\
@@ -52,6 +51,22 @@ runService.Heartbeat:Connect(function()\n\
         BlasterClient:Shoot(closestCharacter.HumanoidRootPart.Position)\n\
     end\n\
 end)\
+```\
+\n\
+How about firing Blasters on the Client?\n\
+```lua\
+local player = game:GetService(\"Players\").LocalPlayer\n\
+local character = player.Character\n\
+\n\
+local BlasterClientConstructor = require(\"BlasterClient\")\n\
+\n\
+local Blaster = player.Backpack[\"E-11\"]\n\
+local BlasterClient = BlasterClientConstructor:GetBlasterClientFromTool(character, Blaster)\n\
+\n\
+runService.Heartbeat:Connect(function()\n\
+    -- Firing at a Target Part\n\
+    BlasterClient:Shoot(workspace.Target.Position)\n\
+end)\n\
 ```\
 ",
             "parameters": {

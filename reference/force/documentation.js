@@ -102,9 +102,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     const paths = window.location.pathname.split("/")
-    const lastPathName = paths[paths.length]
+    const lastPathName = paths[paths.length - 1]
 
-    console.log(paths, lastPathName)
     const response = await fetch(`https://docs.wyverion.com/reference/force/documentation/${lastPathName}.json5`)
     const constructor = JSON5.parse(await response.text())
 

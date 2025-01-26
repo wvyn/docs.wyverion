@@ -11,6 +11,33 @@
             "summary": "The player associated with the blaster.",
             "description": "The character's player for the Blaster. If the character does not have a player, it will be [nil](https://create.roblox.com/docs/luau/nil)."
         },
+        "Character": {
+            "type": [ "Model", "https://create.roblox.com/docs/reference/engine/classes/Model" ],
+            "summary": "The character associated with the blaster.",
+            "description": "The character that is used for all blaster interactions."
+        },
+        "BlasterRemote": {
+            "type": [ "RemoteFunction", "https://create.roblox.com/docs/reference/engine/classes/RemoteFunction" ],
+            "summary": "The remote function required for player to server communication within the Blaster.",
+            "description": "This remote function allows for server reconsiliation and communication of action of blasters."
+        },
+        "Tool": {
+            "type": [ "Tool", "https://create.roblox.com/docs/reference/engine/classes/Tool" ],
+            "summary": "The tool or Blaster that is used by the BlasterClient class.",
+            "description": "The tool contains all FirePoints needed for the bullets to fire from."
+        },
+        "BlasterStats": {
+            "type": [ "BlasterStats", "https://docs.wyverion.com/reference/force/datatypes/BlasterStats" ],
+            "summary": "Contains properties of the BlasterClient class.",
+            "description": "BlasterStats is required and used by the BlasterClient class, it contains all the properties all about the blaster, how it shoot and operates."
+        },
+        "BlasterIndex": {
+            "type": [ "number", "https://create.roblox.com/docs/luau/numbers" ],
+            "summary": "The index which explains how many times a BlasterClient is made.",
+            "description": "\
+If the BlasterIndex is 1 then its the first BlasterClient class to be made, if its 17 then it's the 17th BlasterClient class to be made. \
+This is not synchronzied between Client and Server and are not dependent on each other."
+        },
     },
     "methods": {
         "Shoot": {

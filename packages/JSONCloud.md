@@ -23,13 +23,24 @@ title: Wyverion Discord & JSONCloud
     text-decoration: underline;
   }
 
-  code, pre {
-    background-color: #2d2d2d; /* Dark background for code */
-    color: #dcdcdc; /* Light color for code */
-    padding: 5px;
+  /* Dark background for code blocks */
+  pre, code {
+    background-color: #2d2d2d; /* Darker background for code blocks */
+    color: #dcdcdc; /* Light text color */
+    padding: 10px;
     border-radius: 4px;
+    overflow-x: auto;
   }
 
+  /* Optional: Add custom styling for inline code */
+  code {
+    font-size: 0.95em;
+    padding: 2px 4px;
+    border-radius: 4px;
+    background-color: #333; /* Slightly darker for inline code */
+  }
+
+  /* Styling for links and other text */
   img {
     display: block;
     margin-left: auto;

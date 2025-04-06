@@ -1,60 +1,9 @@
----
-title: Wyverion Discord & JSONCloud
----
-
-<style>
-  /* Set background color to dark theme */
-  body {
-    background-color: #1e1e1e; /* Dark background */
-    color: #dcdcdc; /* Light text color */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: #fff; /* White headings */
-  }
-
-  a {
-    color: #1e90ff; /* Blue links like in VS */
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  /* Dark background for code blocks */
-  pre, code {
-    background-color: #2d2d2d; /* Darker background for code blocks */
-    color: #dcdcdc; /* Light text color */
-    padding: 10px;
-    border-radius: 4px;
-    overflow-x: auto;
-  }
-
-  /* Optional: Add custom styling for inline code */
-  code {
-    font-size: 0.95em;
-    padding: 2px 4px;
-    border-radius: 4px;
-    background-color: #333; /* Slightly darker for inline code */
-  }
-
-  /* Styling for links and other text */
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-  }
-</style>
-
 # **Wyverion Discord & JSONCloud**
 **Publisher**: Wyverion 2025 (c)<br>
 <small>**Developer**: Wyvern</small>
 ---
 
-<img src="../assets/icon.png" alt="Discord Logo" style="display: block; margin-left: auto; margin-right: auto; margin-top: -25px; margin-bottom: -50px" />
+<img src="../assets/Wyverion.png" alt="Discord Logo" style="display: block; margin-left: auto; margin-right: auto; margin-top: -25px; margin-bottom: -50px" />
 
 ## 📋 **Requirements**:
 1. **Node.js**: Ensure you have Node.js installed to run the Discord bot on your server.

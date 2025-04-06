@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyverion Discord & JSONCloud</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        hr {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .center-img {
+            display: block;
+            margin: -25px auto 0;
+        }
+
+        .small-text {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .code-block {
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+        }
+
+        .code-block pre {
+            margin: 0;
+        }
+
+        a {
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><strong>Wyverion Discord & JSONCloud</strong></h1>
+        <p><strong>Publisher</strong>: Wyverion 2025 (c)<br><span class="small-text"><strong>Developer</strong>: Wyvern</span></p>
+        <hr>
+
+        <img src="../assets/Wyverion.png" alt="Discord Logo" class="center-img" />
+
+        <h2>📋 <strong>Requirements</strong>:</h2>
+        <ul>
+            <li><strong>Node.js</strong>: Ensure you have Node.js installed to run the Discord bot on your server.</li>
+            <li><strong>npm</strong> (Node Package Manager): This will help you install the required dependencies for your bot.</li>
+            <li><strong>TypeScript</strong>: Since this is a 100% TypeScript project, make sure to install TypeScript globally or as a dev dependency:
+                <div class="code-block">
+                    <pre>npm install -g typescript</pre>
+                </div>
+                or
+                <div class="code-block">
+                    <pre>npm install --save-dev typescript</pre>
+                </div>
+            </li>
+        </ul>
+
+        <h2>🚀 <strong>Dependencies</strong>:</h2>
+        <ul>
+            <li><strong><a href="https://discord.js.org/">discord.js</a></strong>: The powerful JavaScript library to interact with Discord's API.</li>
+            <li><strong><a href="https://axios-http.com/">axios</a></strong>: A promise-based HTTP client to make API requests from your bot.</li>
+            <li><strong><a href="https://expressjs.com/">express</a></strong>: A minimal and flexible Node.js web application framework to create APIs or serve web pages.</li>
+            <li><strong><a href="https://github.com/eemeli/yaml">yaml</a></strong>: A YAML parser and stringifier for JavaScript to work with YAML files.</li>
+        </ul>
+
+        <h2>🛠️ <strong>Installation</strong>:</h2>
+        <p>If you're using <strong>npm</strong>:</p>
+        <div class="code-block">
+            <pre>npm install discord.js axios express yaml</pre>
+        </div>
+        <p>Or if you're using <strong>pnpm</strong>:</p>
+        <div class="code-block">
+            <pre>pnpm install discord.js axios express yaml</pre>
+        </div>
+        <p>Or if you're using <strong>yarn</strong>:</p>
+        <div class="code-block">
+            <pre>yarn add discord.js axios express yaml</pre>
+        </div>
+
+        <h2>⚙️ <strong>Configuration (configs.yaml)</strong>:</h2>
+        <p>In the <code>configs.yaml</code> file, you can customize the bot’s behavior by changing secret keys and the server port.</p>
+
+        <h2>🚀 <strong>Running the Bot</strong>:</h2>
+        <p>To run the bot with <strong>npm</strong>:</p>
+        <div class="code-block">
+            <pre>npm start</pre>
+        </div>
+        <p>To run the bot with <strong>pnpm</strong>:</p>
+        <div class="code-block">
+            <pre>pnpm start</pre>
+        </div>
+        <p>To run the bot with <strong>yarn</strong>:</p>
+        <div class="code-block">
+            <pre>yarn start</pre>
+        </div>
+
+        <hr>
+
+        <h2><strong>Wyverion Discord</strong> - A Luau-Powered Discord Client Module</h2>
+        <p><strong>Wyverion Discord</strong> is a revolutionary module designed for developers who wish to create and manage Discord clients using <strong>Luau</strong>, the lightweight scripting language used by Roblox. It simplifies the process of creating Discord bots and integrating them into your server environment, all while maintaining the power and flexibility you need to interact with Discord’s API. With <strong>Wyverion Discord</strong>, you can focus on writing simple and effective code in <strong>Luau</strong> to control your Discord bot without getting lost in the complexities of traditional JavaScript-based libraries.</p>
+
+        <h2><strong>JSONCloud</strong> - A Cloud-Based JSON Management Solution</h2>
+        <p><strong>JSONCloud</strong> is a versatile tool that allows you to create, delete, write, and read <strong>JSON</strong> files outside of the Roblox environment. This service acts as a bridge for developers who want to work with JSON data on their own cloud infrastructure, making it easier to manage external data and interact with it in their projects. Whether you are building a game, web app, or other software, <strong>JSONCloud</strong> provides an easy way to store and manipulate your JSON data remotely, offering a seamless integration with your existing workflows.</p>
+    </div>
+</body>
+</html>

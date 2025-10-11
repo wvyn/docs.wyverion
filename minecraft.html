@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wyverion 1.12.2 Modpack</title>
 
   <!-- Favicon -->
   <link rel="icon" href="https://docs.wyverion.com/assets/icon.ico" type="image/x-icon">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Wyverion 1.12.2 Modpack">
-  <meta property="og:description" content="Mod list and download for the Wyverion 1.12.2 Forge modpack.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://docs.wyverion.com/">
-  <meta property="og:image" content="https://docs.wyverion.com/assets/icon.ico">
+  <meta property="og:title" content="Wyverion 1.12.2 Modpack" />
+  <meta property="og:description" content="Mod list and installation guide for Wyverion's Minecraft 1.12.2 modpack." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.wyverion.com/" />
+  <meta property="og:image" content="https://docs.wyverion.com/assets/icon.ico" />
 
   <style>
     body {
@@ -25,9 +25,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
 
     .container {
@@ -39,37 +38,42 @@
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 42px;
       font-weight: bold;
       color: #66b3ff;
       margin-bottom: 20px;
     }
 
-    details {
-      background-color: #1a1a1a;
-      padding: 15px;
-      border-radius: 6px;
-      text-align: left;
-      margin: 20px 0;
+    h2 {
+      font-size: 24px;
+      color: #ffffff;
+      margin-top: 40px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 8px;
     }
 
-    summary {
-      font-size: 18px;
-      cursor: pointer;
-      font-weight: bold;
-      color: #66b3ff;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-      list-style: none;
-    }
-
-    li {
-      margin-bottom: 4px;
-      font-size: 15px;
+    p {
+      font-size: 16px;
       color: #dcdcdc;
+      line-height: 1.6;
+    }
+
+    code {
+      background-color: #2a2a2a;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #ffffff;
+    }
+
+    a {
+      color: #66b3ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ffffff;
     }
 
     .button {
@@ -89,6 +93,33 @@
       background-color: #4fa3d1;
     }
 
+    details {
+      background-color: #1a1a1a;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    summary {
+      font-size: 18px;
+      font-weight: bold;
+      color: #66b3ff;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+
+    li {
+      margin-bottom: 4px;
+      font-size: 15px;
+      color: #dcdcdc;
+    }
+
     footer {
       font-size: 14px;
       color: #888;
@@ -105,8 +136,25 @@
   <div class="container">
     <h1>Wyverion 1.12.2 Modpack</h1>
 
+    <h2>Install Forge 1.12.2</h2>
+    <p>
+      To run this modpack, you need to install Forge 1.12.2. You can download the official Forge installer below:
+    </p>
+    <p>
+      <a href="https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2860/forge-1.12.2-14.23.5.2860-installer.jar" target="_blank">
+        Download Forge 1.12.2 Installer
+      </a>
+    </p>
+    <p>Once downloaded:</p>
+    <ul>
+      <li>Run the <code>forge-1.12.2-14.23.5.2860-installer.jar</code> file</li>
+      <li>Select <strong>"Install Client"</strong> and click OK</li>
+      <li>Open the Minecraft Launcher and select the Forge 1.12.2 profile</li>
+    </ul>
+
+    <h2>Mod List</h2>
     <details open>
-      <summary>📦 Mod List (Click to Toggle)</summary>
+      <summary>Mod Files</summary>
       <ul>
         <li>ActuallyAdditions-1.12.2-r152.jar</li>
         <li>antiqueatlas-1.12.2-4.6.3.jar</li>
@@ -142,7 +190,16 @@
       </ul>
     </details>
 
-    <a href="assets/newMods1.zip" class="button" download>⬇️ Download All Mods (ZIP)</a>
+    <a href="https://docs.wyverion.com/assets/newMods1.zip" class="button" download>Download All Mods (ZIP)</a>
+
+    <h2>How to Install Mods</h2>
+    <p>After installing Forge and downloading the ZIP above:</p>
+    <ul>
+      <li>Locate your Minecraft directory. On Windows, press <code>Win + R</code> and type <code>%appdata%\.minecraft</code></li>
+      <li>Open the <code>mods</code> folder. If it doesn't exist, create one</li>
+      <li>Extract the contents of <code>newMods1.zip</code> into the <code>mods</code> folder</li>
+      <li>Launch Minecraft with the Forge 1.12.2 profile</li>
+    </ul>
   </div>
 
   <footer>

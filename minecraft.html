@@ -1,186 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wyverion Minecraft Server</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="https://docs.wyverion.com/assets/icon.ico" type="image/x-icon">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Wyverion Minecraft Server">
-    <meta property="og:description" content="Forge 1.20.1 server with Mekanism, AE2, JEI, Voice Chat, and more. Join mc.wyverion.com">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.wyverion.com/">
-    <meta property="og:image" content="https://docs.wyverion.com/assets/icon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wyverion 1.12.2 Modpack</title>
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a1a1a;
-            color: #f1f1f1;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
+  <!-- Favicon -->
+  <link rel="icon" href="https://docs.wyverion.com/assets/icon.ico" type="image/x-icon">
 
-        .container {
-            max-width: 600px;
-            padding: 40px;
-            border-radius: 8px;
-            background-color: #212121;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-        }
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Wyverion 1.12.2 Modpack">
+  <meta property="og:description" content="Mod list and download for the Wyverion 1.12.2 Forge modpack.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://docs.wyverion.com/">
+  <meta property="og:image" content="https://docs.wyverion.com/assets/icon.ico">
 
-        h1 {
-            font-size: 64px;
-            font-weight: bold;
-            color: #66b3ff;
-            margin: 0 0 20px 0;
-        }
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1a1a1a;
+      color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
 
-        p {
-            font-size: 20px;
-            color: #dcdcdc;
-            margin: 0 0 20px 0;
-        }
+    .container {
+      max-width: 700px;
+      padding: 40px;
+      border-radius: 8px;
+      background-color: #212121;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    }
 
-        code {
-            display: block;
-            background-color: #1a1a1a;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
-            font-size: 16px;
-            color: #ccc;
-            text-align: left;
-            white-space: pre-wrap;
-        }
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      color: #66b3ff;
+      margin-bottom: 20px;
+    }
 
-        a {
-            font-size: 18px;
-            color: #66b3ff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+    details {
+      background-color: #1a1a1a;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: left;
+      margin: 20px 0;
+    }
 
-        a:hover {
-            color: #ffffff;
-        }
+    summary {
+      font-size: 18px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #66b3ff;
+      margin-bottom: 10px;
+    }
 
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #66b3ff;
-            color: #1a1a1a;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-        }
+    ul {
+      padding-left: 20px;
+      list-style: none;
+    }
 
-        .button:hover {
-            background-color: #4fa3d1;
-        }
+    li {
+      margin-bottom: 4px;
+      font-size: 15px;
+      color: #dcdcdc;
+    }
 
-        footer {
-            font-size: 14px;
-            color: #888;
-            padding: 20px;
-            text-align: center;
-        }
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #66b3ff;
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
 
-        footer a {
-            color: #66b3ff;
-        }
-    </style>
+    .button:hover {
+      background-color: #4fa3d1;
+    }
+
+    footer {
+      font-size: 14px;
+      color: #888;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #66b3ff;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Wyverion Server</h1>
-        <p><strong>Forge Client:</strong></p>
-        <code>forge-1.20.1-47.4.2</code>
+  <div class="container">
+    <h1>Wyverion 1.12.2 Modpack</h1>
 
-        <p><strong>Server Address:</strong></p>
-        <code>mc.wyverion.com</code>
+    <details open>
+      <summary>📦 Mod List (Click to Toggle)</summary>
+      <ul>
+        <li>ActuallyAdditions-1.12.2-r152.jar</li>
+        <li>antiqueatlas-1.12.2-4.6.3.jar</li>
+        <li>artifacts-1.12.2-1.2.4.jar</li>
+        <li>Baubles-1.12-1.5.2.jar</li>
+        <li>BetterFps-1.4.8.jar</li>
+        <li>Bountiful Baubles-1.12.2-0.1.8.jar</li>
+        <li>Bountiful-1.12.2-2.2.3.jar</li>
+        <li>ElectroblobsWizardry-4.3.15.jar</li>
+        <li>foamfix-0.10.15-1.12.2.jar</li>
+        <li>Forgelin-1.8.4.jar</li>
+        <li>geckolib-forge-1.12.2-3.0.31.jar</li>
+        <li>getittogetherdrops-1.12.2-v1.0.2.jar</li>
+        <li>gravestone-1.10.3.jar</li>
+        <li>iceandfire-1.9.1-1.12.2.jar</li>
+        <li>Into The Dungeons - 1.6.jar</li>
+        <li>Jade-0.1.0.jar</li>
+        <li>jei_1.12.2-4.16.1.1013.jar</li>
+        <li>llibrary-1.7.20-1.12.2.jar</li>
+        <li>Mekanism-1.12.2-9.8.3.390.jar</li>
+        <li>MekanismGenerators-1.12.2-9.8.3.390.jar</li>
+        <li>MekanismTools-1.12.2-9.8.3.390.jar</li>
+        <li>mowziesmobs_1.12.2_1.5.8.jar</li>
+        <li>OptiFine_1.12.2_HD_U_G5.jar</li>
+        <li>particleculling-1.12.2-v1.4.3.jar</li>
+        <li>TFSpellPack-1.1.0-MC1.12.2.jar</li>
+        <li>Thaumcraft-1.12.2-6.1.BETA26.jar</li>
+        <li>TravelersBackpack-1.12.2-1.0.35.jar</li>
+        <li>twilightforest-1.12.2-3.11.1021-universal.jar</li>
+        <li>voicechat-forge-1.12.2-2.6.5.jar</li>
+        <li>Waystones_1.12.2-4.1.0.jar</li>
+        <li>XaerosWorldMap_1.39.12_Forge_1.12.jar</li>
+      </ul>
+    </details>
 
-        <p><strong>Modpack:</strong></p>
-        <code>
-# appliedenergistics2-forge-15.4.5
-# gravestone-forge-1.20.1-1.0.24
-# guideme-20.1.9
-# Jade-1.20.1-Forge-11.13.1
-# jei-1.20.1-forge-15.20.0.112
-# Mekanism-1.20.1-10.4.16.80
-# MekanismAdditions-1.20.1-10.4.16.80
-# MekanismGenerators-1.20.1-10.4.16.80
-# MekanismTools-1.20.1-10.4.16.80
-# voicechat-forge-1.20.1-2.5.30
-# curios-forge-5.14.1+1.20.1
-# DungeonsArise-1.20.x-2.1.58-release
-# ars_nouveau-1.20.1-4.12.6-all
-# alexsmobs-1.22.9
-# geckolib-forge-1.20.1-4.7.2
-# citadel-2.6.1-1.20.1
-# coroutil-forge-1.20.1-1.3.7
-# watut-forge-1.20.1-1.2.3
-# ars_additions-1.20.1-1.6.7
-# ars_caelum-1.20.1-2.0.1
-# ars_controle-1.20.1-1.1.1
-# create-1.20.1-6.0.6
-# ars_elemental-1.20.1-0.6.7.8
-# ars_instrumentum-1.20.1-4.1.0
-# ars_ocultas-1.20.1-1.2.2-all
-# ars_scalaes-1.20.1-1.10.7c
-# occultism-1.20.1-1.141.4
-# Patchouli-1.20.1-84.1-FORGE
-# modonomicon-1.20.1-forge-1.77.6
-# SmartBrainLib-forge-1.20.1-1.15
-# ars_creo-1.20.1-4.3.0
-# toomanyglyphs-1.20.1-2.3.2.12345
-# knightsnmages-0.0.7-neo
-# ec_ars_plugin-1.20.1-1.0.4-all
-# cloth-config-11.1.136-forge
-# expanded_combat-1.20.1-3.2.6-all
-# naturalist-5.0pre3+forge-1.20.1
-# packedup-1.1.0-forge-mc1.20.1
-# carryon-forge-1.20.1-2.1.2.7
-# NaturesCompass-1.20.1-1.11.2-forge
-# refurbished_furniture-forge-1.20.1-1.0.14
-# iceandfire-2.1.13-1.20.1-beta-5
-# framework-forge-1.20.1-0.7.15
-# supermartijn642corelib-1.1.18-forge-mc1.20.1
-# supermartijn642configlib-1.1.8-forge-mc1.20
-# embeddium-0.3.31+mc1.20.1
-# WI-Zoom-1.5-MC1.20.1-Forge
-# oculus-mc1.20.1-1.7.0
-# XaerosWorldMap_1.39.9_Forge_1.20
-# deeperdarker-forge-1.20.1-1.3.3
-# mowziesmobs-1.7.3
-# BOMD-Forge-1.20.1-1.1.2
-# twilightforest-1.20.1-4.3.2508-universal
-# CerbonsAPI-Forge-1.20.1-1.1.0
-        </code>
+    <a href="assets/newMods1.zip" class="button" download>⬇️ Download All Mods (ZIP)</a>
+  </div>
 
-        <p><strong>Install all four of them a single file is to large</strong></p>
-        <a href="https://docs.wyverion.com/assets/mods1.zip" class="button" download>Download Mods 1 (ZIP)</a>
-        <a href="https://docs.wyverion.com/assets/mods2.zip" class="button" download>Download Mods 2 (ZIP)</a>
-        <a href="https://docs.wyverion.com/assets/mods3.zip" class="button" download>Download Mods 3 (ZIP)</a>
-        <a href="https://docs.wyverion.com/assets/mods4.zip" class="button" download>Download Mods 4 (ZIP)</a>
-        <a href="https://docs.wyverion.com/assets/mods5.zip" class="button" download>Download Mods 5 (ZIP)</a>
-    </div>
-
-    <footer>
-        &copy; 2025 Wyverion. Join us at <a href="https://mc.wyverion.com" target="_blank">mc.wyverion.com</a>
-    </footer>
+  <footer>
+    &copy; 2025 Wyverion. Join us at <a href="https://mc.wyverion.com" target="_blank">mc.wyverion.com</a>
+  </footer>
 </body>
 </html>

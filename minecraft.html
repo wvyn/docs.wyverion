@@ -247,11 +247,15 @@
         const data2 = await res2.arrayBuffer();
         const zip2 = await JSZip.loadAsync(data2);
 
+        btn.textContent = 'Packing 1...';
+
         // Add files from mods1.zip
         await Promise.all(Object.keys(zip1.files).map(async (filename) => {
           const fileData = await zip1.files[filename].async('arraybuffer');
           zip.file(filename, fileData);
         }));
+
+        btn.textContent = 'Packing 2...';
 
         // Add/overwrite files from mods2.zip
         await Promise.all(Object.keys(zip2.files).map(async (filename) => {
@@ -259,8 +263,12 @@
           zip.file(filename, fileData);
         }));
 
+        btn.textContent = 'Merging...';
+
         // Generate combined ZIP blob
         const mergedZipBlob = await zip.generateAsync({ type: 'blob' });
+
+        btn.textContent = 'Downloading...';
 
         // Trigger download
         const url = URL.createObjectURL(mergedZipBlob);

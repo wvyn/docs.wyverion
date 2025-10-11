@@ -87,6 +87,8 @@
       font-size: 18px;
       transition: background-color 0.3s ease;
       margin-top: 20px;
+      cursor: pointer;
+      border: none;
     }
 
     .button:hover {
@@ -190,7 +192,8 @@
       </ul>
     </details>
 
-    <a href="assets/newMods1.zip" class="button" download>Download All Mods (ZIP)</a>
+    <!-- Changed from <a> to <button> and added an id -->
+    <button id="downloadMods" class="button">Download All Mods (ZIP)</button>
 
     <h2>How to Install Mods</h2>
     <p>Once you’ve installed Forge and downloaded the modpack:</p>
@@ -217,5 +220,68 @@
   <footer>
     &copy; 2025 Wyverion. Join us at <a href="https://mc.wyverion.com" target="_blank">mc.wyverion.com</a>
   </footer>
+
+  <!-- Include JSZip library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+
+  <script>
+    document.getElementById('downloadMods').addEventListener('click', async () => {
+      const JSZip = window.JSZip;
+      const zip = new JSZip();
+
+      try {
+        // Optional: Disable button while processing
+        const btn = document.getElementById('downloadMods');
+        btn.disabled = true;
+        btn.textContent = 'Preparing download...';
+
+        // Fetch mods1.zip
+        const res1 = await fetch('assets/halfNewMods1.zip');
+        if (!res1.ok) throw new Error('Failed to fetch mods1.zip');
+        const data1 = await res1.arrayBuffer();
+        const zip1 = await JSZip.loadAsync(data1);
+
+        // Fetch mods2.zip
+        const res2 = await fetch('assets/halfNewMods2.zip');
+        if (!res2.ok) throw new Error('Failed to fetch mods2.zip');
+        const data2 = await res2.arrayBuffer();
+        const zip2 = await JSZip.loadAsync(data2);
+
+        // Add files from mods1.zip
+        await Promise.all(Object.keys(zip1.files).map(async (filename) => {
+          const fileData = await zip1.files[filename].async('arraybuffer');
+          zip.file(filename, fileData);
+        }));
+
+        // Add/overwrite files from mods2.zip
+        await Promise.all(Object.keys(zip2.files).map(async (filename) => {
+          const fileData = await zip2.files[filename].async('arraybuffer');
+          zip.file(filename, fileData);
+        }));
+
+        // Generate combined ZIP blob
+        const mergedZipBlob = await zip.generateAsync({ type: 'blob' });
+
+        // Trigger download
+        const url = URL.createObjectURL(mergedZipBlob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'newMods1.zip';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+
+      } catch (error) {
+        alert('Error during download: ' + error.message);
+        console.error(error);
+      } finally {
+        // Re-enable button
+        const btn = document.getElementById('downloadMods');
+        btn.disabled = false;
+        btn.textContent = 'Download All Mods (ZIP)';
+      }
+    });
+  </script>
 </body>
 </html>

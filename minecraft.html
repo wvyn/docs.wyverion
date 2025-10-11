@@ -224,72 +224,23 @@
   <!-- Include JSZip library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
 
-  <script>
-    document.getElementById('downloadMods').addEventListener('click', async () => {
-      const JSZip = window.JSZip;
-      const zip = new JSZip();
+  
+<script>
+  document.getElementById('downloadMods').addEventListener('click', () => {
+    const files = [
+      { url: 'assets/mods1.zip', name: 'halfNewMods1.zip' },
+      { url: 'assets/mods2.zip', name: 'haldNewMods2.zip' }
+    ];
 
-      try {
-        // Optional: Disable button while processing
-        const btn = document.getElementById('downloadMods');
-        btn.disabled = true;
-        btn.textContent = 'Preparing download...';
-
-        // Fetch mods1.zip
-        const res1 = await fetch('assets/halfNewMods1.zip');
-        if (!res1.ok) throw new Error('Failed to fetch mods1.zip');
-        const data1 = await res1.arrayBuffer();
-        const zip1 = await JSZip.loadAsync(data1);
-
-        // Fetch mods2.zip
-        const res2 = await fetch('assets/halfNewMods2.zip');
-        if (!res2.ok) throw new Error('Failed to fetch mods2.zip');
-        const data2 = await res2.arrayBuffer();
-        const zip2 = await JSZip.loadAsync(data2);
-
-        btn.textContent = 'Packing 1...';
-
-        // Add files from mods1.zip
-        await Promise.all(Object.keys(zip1.files).map(async (filename) => {
-          const fileData = await zip1.files[filename].async('arraybuffer');
-          zip.file(filename, fileData);
-        }));
-
-        btn.textContent = 'Packing 2...';
-
-        // Add/overwrite files from mods2.zip
-        await Promise.all(Object.keys(zip2.files).map(async (filename) => {
-          const fileData = await zip2.files[filename].async('arraybuffer');
-          zip.file(filename, fileData);
-        }));
-
-        btn.textContent = 'Merging...';
-
-        // Generate combined ZIP blob
-        const mergedZipBlob = await zip.generateAsync({ type: 'blob' });
-
-        btn.textContent = 'Downloading...';
-
-        // Trigger download
-        const url = URL.createObjectURL(mergedZipBlob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'newMods1.zip';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-
-      } catch (error) {
-        alert('Error during download: ' + error.message);
-        console.error(error);
-      } finally {
-        // Re-enable button
-        const btn = document.getElementById('downloadMods');
-        btn.disabled = false;
-        btn.textContent = 'Download All Mods (ZIP)';
-      }
+    files.forEach(file => {
+      const a = document.createElement('a');
+      a.href = file.url;
+      a.download = file.name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
     });
-  </script>
+  });
+</script>
 </body>
 </html>
